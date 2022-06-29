@@ -1,0 +1,22 @@
+1. Output of program:
+
+No, I wug.
+You wugga wug.
+I wug.
+
+
+2. Stack diagram when ping() is invoked for the first time:
+
+main
+zoop
+baffle
+ping
+
+
+3. If you invoke baffle() at the end of the ping() method:
+
+You'd get an infinite loop.  It'd try to print
+wug.
+wug.
+wug.
+etc.  I imagine it'd crash.

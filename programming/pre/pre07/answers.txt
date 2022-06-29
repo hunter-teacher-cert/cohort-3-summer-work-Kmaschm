@@ -1,0 +1,31 @@
+
+banana():
+  The method banana() returns the product of all of the values in a given array of ints.  
+
+  a[]: array we are inspecting 
+  
+  kiwi: holds the product of the values the specified array
+
+  i: counter we are using to loop through the array
+
+
+grapefruit():
+  The method grapefruit() returns the index of the first time a specified integer value is present in a given  array and if the given value is not in the array, it returns -1.
+
+  a[]: array we are inspecting
+
+  grape: the value we are searching for in the array
+
+  i: counter we are using to loop through the array
+
+
+pineapple(): 
+  The method pineapple() returns how many times a specified integer value occurs in a given array.
+
+  a[]: array we are inspecting
+
+  apple: the value we are checking to see how many times it occurs in the given array
+
+  pear: the counter for how many times the value apple is present in the given array 
+
+  pine: temporarily holds value stored in array at a each index as we loop through array 

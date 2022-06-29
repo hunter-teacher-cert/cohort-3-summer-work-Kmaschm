@@ -1,0 +1,29 @@
+Exercise 1:
+if(x > 0 && x < 10) {
+  System.out.println("positive sing digit number");
+}
+
+Exercise 2:
+1. Stack Diagram:
+main  bizz: 5  buzz: 2
+zoop  fred: "just for"   bob: 5
+ping  strangStrung: "not "
+clink fork: 4
+zoop  fred: "breakfast" bob: 4
+
+2. Complete output:
+just for
+any not more 
+It's breakfast 
+! 
+
+
+Exercise 3: 
+Stack Diagram:
+nLines  n: 4
+nLines  n: 3
+nLines  n: 2
+nLines  n: 1
+nLines  n: 0
+
+
