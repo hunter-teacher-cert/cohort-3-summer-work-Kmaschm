@@ -1,6 +1,7 @@
 * Last name: Maschmeyer  
 * First name: Katherine (Kate)
-* Github username: kmaschm
+* Github username: kmaschm 
+
 
 * Instructions:
  
@@ -12,7 +13,7 @@ Github.
 
 
 
-
+Checking to see update
 
 * Resources:
 - [[https://books.trinket.io/thinkjava/][Think Java]]
