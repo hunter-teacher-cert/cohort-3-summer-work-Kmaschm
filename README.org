@@ -12,9 +12,6 @@ specification. Add the required files, commit and push them up to
 Github.
 
 
-
-Checking to see update
-
 * Resources:
 - [[https://books.trinket.io/thinkjava/][Think Java]]
 - [[https://introcs.cs.princeton.edu/java/][CS - Sedgewick / Wayne]]
