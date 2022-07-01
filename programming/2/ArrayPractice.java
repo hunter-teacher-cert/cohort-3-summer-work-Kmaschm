@@ -200,7 +200,7 @@ public class ArrayPractice
     // while(i < data.length && currValue <= data[i]) {
     //     currValue = data[i];
     //     i++;
-    // }
+    // } <-- earlier thought process
 
     return true; 
 
