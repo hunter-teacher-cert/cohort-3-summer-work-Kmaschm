@@ -1,7 +1,10 @@
 /**
  * ArrayPractice by Team BossCoders
- * First Last
- * collaborators: First Last, First Last
+ * collaborators: 
+ * AliseBraick
+ * Usman, Ahmed - usman0527
+ * Maschmeyer, Kate - kmaschm
+
  */
 
 /**
@@ -215,7 +218,7 @@ public class ArrayPractice
 
   */
   public static int findMaxValue( int[] data ) {
-    int m = data[0];  // will hold the maximum value;
+    int m = data[0];  // will hold the maximum value
 
     for(int i = 1; i < data.length; i++) {
         if(data[i] > m) {
