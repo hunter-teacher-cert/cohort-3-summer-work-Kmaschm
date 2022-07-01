@@ -349,5 +349,9 @@ public class ArrayPractice
 
       flip(data2);
       printArray(data2);
+
+      flip(negData);
+      printArray(negData);
+      
   }
 }
