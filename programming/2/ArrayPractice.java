@@ -19,7 +19,7 @@
    6. isSorted ✅
    7. findMaxValue ✅
    8. countOdds ✅
-   9. flip
+   9. flip ✅
 
    The stubs will have comments describing what they should do
 
@@ -40,7 +40,7 @@
    - countOdds ✅
 
    Advanced:
-   Complete all the methods
+   Complete all the methods ✅
 */
 
 import java.util.*;
@@ -69,7 +69,7 @@ public class ArrayPractice
     // loop through each element of the array and
     /* YOUR BRILLIANT CODE HERE */
     for(int i = 0; i < data.length; i++) {
-        data[i] = startValue + i*step;
+        data[i] = step*i + startValue; // y = mx + b: m = step, x = i, startValue = b
     }
       
 
