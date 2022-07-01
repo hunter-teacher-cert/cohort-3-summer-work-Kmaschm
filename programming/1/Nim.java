@@ -1,6 +1,6 @@
 /**
  * Game of Nim by Team BossCoders - Zoom Room 2
- * MULTIPLAYERS BOSSES!
+ * MULTIPLAYER BOSSES!
  * collaborators: 
 * kmaschm - Maschmeyer, Kate 
 * AliseBraick, Alise Braick
