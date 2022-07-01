@@ -270,8 +270,13 @@ public class ArrayPractice
      If the input array contains 5,8,13,7,27,2
      After the routine, the array will contain 2,27,7,13,8,5
   */
-  public static void flip( int[] data )
-  {
+  public static void flip( int[] data ) {
+     int temp; // hold value for us temporarily
+      for(int i = 0; i < data.length; i++) {
+          temp = data[i];
+          data[i] = data[data.length - i - 1];
+          data[data.length - i - 1]  = temp;
+      }
     
       
   }
@@ -303,6 +308,9 @@ public class ArrayPractice
       // testing findMaxValue
       System.out.println("Max value in data2 is: " + findMaxValue(data2));
 
+      int[] negData = new int[]{-3, -5, -10, -2, -55};
+      System.out.println("Max value in negData is: " + findMaxValue(negData));
+
       // testing isSorted
     int[] data5 = new int[]{0, 15, 20, 20, 20, 50}; // sorted
     int[] data6 = new int[]{0, 15, 21, 24, 23, 24};  // not sorted
@@ -333,5 +341,9 @@ public class ArrayPractice
       System.out.println("Array: ");
       printArray(data6);
       System.out.println("# of odds: " + countOdds(data6)); 
+
+      // testing flip
+      flip(data2);
+      printArray(data2);
   }
 }
