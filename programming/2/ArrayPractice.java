@@ -1,9 +1,10 @@
 /**
  * ArrayPractice by Team BossCoders
+ * Worked on by self, then worked with partners to improve change while Alise drove & coded in her repo
  * collaborators: 
  * AliseBraick
  * Usman, Ahmed - usman0527
- * Maschmeyer, Kate - kmaschm
+ * Maschmeyer, Kate - kmaschm 
  * Ashley Ufret
  */
 
