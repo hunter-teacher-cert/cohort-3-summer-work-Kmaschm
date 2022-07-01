@@ -187,14 +187,12 @@ public class ArrayPractice
   */
   public static boolean isSorted( int[] data )
   {
-    int currVal = data[0]; // where our pointer is
-      
-    for(int i = 0; i < data.length; i++) {
-        if(currVal > data[i]) { // if 
+   // int currVal = data[0]; // where our pointer is
+      // updated after demo, thanks!
+    for(int i = 0; i < data.length-1; i++) {
+        if(data[i] > data[i+1]) { // if current is bigger than next
             return false;
-        } else { // it's still good, we'll move forward
-            currVal = data[i];
-        }
+        } 
     }  
     // int i = 0;
     // while(i < data.length && currValue <= data[i]) {
