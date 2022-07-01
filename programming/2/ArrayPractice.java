@@ -271,13 +271,18 @@ public class ArrayPractice
      After the routine, the array will contain 2,27,7,13,8,5
   */
   public static void flip( int[] data ) {
-     int temp; // hold value for us temporarily
-      for(int i = 0; i < data.length; i++) {
+    // Note: only need to go halfway across the array
+    // check if the length is even (go up to halfway) or odd (go to 1 less than halfway)
+
+      int halfIndex = (data.length % 2 == 1) ? data.length/2 : (data.length - 1)/2;
+       
+      int temp; // hold value for us temporarily
+      
+      for(int i = 0; i < halfIndex+1; i++) {
           temp = data[i];
           data[i] = data[data.length - i - 1];
           data[data.length - i - 1]  = temp;
       }
-    
       
   }
 
@@ -342,7 +347,6 @@ public class ArrayPractice
       printArray(data6);
       System.out.println("# of odds: " + countOdds(data6)); 
 
-      // testing flip
       flip(data2);
       printArray(data2);
   }
