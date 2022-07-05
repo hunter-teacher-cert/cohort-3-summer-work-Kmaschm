@@ -31,7 +31,7 @@ import java.util.*;
    - explodeSquare * ✅
 
    Advanced level (complete Basic + Intermediate + these two methods):
-   - explodeAllChar *
+   - explodeAllChar * ✅
    - downString ✅
 
    The routines with the * will be particularly helpful for the
@@ -359,6 +359,11 @@ public class Array2DPractice
     System.out.println("Printing out board b, exploding: 0,0");  
     explodeSquare(b, 0, 0);
     printBoard(b);
+
+    System.out.println("Printing out board b, exploding: 4,9");  
+    explodeSquare(b, 4, 9);
+    printBoard(b);
+
 
     System.out.println("Printing out board c with highness");  
     downString(c, 2, 3, "highness");
