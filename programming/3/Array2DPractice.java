@@ -276,7 +276,6 @@ public class Array2DPractice
   */
   public static void explodeAllChar(char[][] board, char c)
   {
-    /* YOUR AWESOME CODE HERE */
       for(int i = 0; i < board.length; i++) {
           for(int j = 0; j < board[0].length; j++) {
               if(board[i][j] == c) {
@@ -369,9 +368,9 @@ public class Array2DPractice
     downString(c, 2, 3, "highness");
     printBoard(c);  
 
-    System.out.println("Printing out board c, exploding all h");  
-    explodeAllChar(c, 'h');
-    printBoard(c);
+    System.out.println("Printing out board b, exploding all #");  
+    explodeAllChar(b, '#');
+    printBoard(b);
 
       
       
