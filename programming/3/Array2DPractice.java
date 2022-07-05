@@ -178,29 +178,29 @@ public class Array2DPractice
     int maxColVal = board[0].length - 1;
 
     // (r-1, c-1), (r-1, c), (r-1, c)
-    if (row - 1 >= 0) { // row value is ok on top
-        if(col - 1 >= 0) {
-            board[row - 1][col - 1] = 'X';
+    if (row - 1 >= 0) { // row above is ok
+        if(col - 1 >= 0) { // col to left is ok
+            board[row - 1][col - 1] = 'X'; 
         }
         
-        board[row - 1][col] = 'X';
+        board[row - 1][col] = 'X'; // checked
 
-        if(col + 1 <= maxColVal) {
+        if(col + 1 <= maxColVal) { // if col to right is ok
             board[row - 1][col + 1] = 'X';
         }
     }
 
     // (r, c-1) and (r, c+1)
-    if(col - 1 >= 0) {
+    if(col - 1 >= 0) { // row ok, col to left ok
             board[row][col - 1] = 'X';
     }
-    if(col + 1 <= maxColVal) {
+    if(col + 1 <= maxColVal) { // row ok, col to right ok
         board[row][col + 1] = 'X';
     }
 
     // (r+1, c-1), (r+1, c), (r+1, c+1)
-    if (row + 1 <= maxRowVal) { // row value is ok on bottom
-        if(col - 1 >= 0) {
+    if (row + 1 <= maxRowVal) { // row below is ok 
+        if(col - 1 >= 0) { 
             board[row + 1][col - 1] = 'X';
         }
         
@@ -224,7 +224,17 @@ public class Array2DPractice
 
      Example:
 
-     Given the array
+    Given the array
+     qqzqq
+     qqqqq
+     qqqqq
+     qqqqq
+     qzqqq
+     qqqqq
+     qqqqz
+     ...
+     explodeAllchar(board,'z')
+     will change board to
      qXzXq
      qXXXq
      qqqqq
@@ -233,7 +243,6 @@ public class Array2DPractice
      XXXXX
      qqqXz
 
-     explodeAllchar(board,'z') will change board to:
   */
   public static void explodeAllChar(char[][] board, char c)
   {
@@ -321,8 +330,13 @@ public class Array2DPractice
     explodeSquare(b, 4, 9);
     printBoard(b);
 
-    downString(c, 2, 3, "Highness");
+    System.out.println("Printing out board c with highness");  
+    downString(c, 2, 3, "highness");
     printBoard(c);  
+
+    System.out.println("Printing out board c, exploding all h");  
+    explodeAllChar(c, 'h');
+    printBoard(c);
 
       
       
