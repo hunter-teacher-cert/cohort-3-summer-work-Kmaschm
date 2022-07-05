@@ -174,42 +174,72 @@ public class Array2DPractice
   */
   public static void explodeSquare( char[][] board, int row, int col )
   {
-    int maxRowVal = board.length - 1;
-    int maxColVal = board[0].length - 1;
+  // r = row, c = col
+  // local rows: r-1, r, r+1
+  // local cols: c-1, c, c+1
+ 
+ // r-1, c-1 | r-1, c | r-1, c+1
+ // r, c-1   | r, c   | r,  c+1
+ // r+1, c-1 | r+1, c | r+1, c+1
+      
+ // 
 
-    // (r-1, c-1), (r-1, c), (r-1, c)
-    if (row - 1 >= 0) { // row above is ok
-        if(col - 1 >= 0) { // col to left is ok
-            board[row - 1][col - 1] = 'X'; 
+// approach after David's suggestions/work; think this is more efficient!:
+  for(int i  = row - 1; i <= row + 1; i++) { // go through local rows
+    if(i >= 0 && i < board.length) { // make sure row value is valid
+        for(int j = col - 1; j <= col + 1; j++) { // go through local cols 
+            if(j >= 0 && j < board[0].length) { // make sure col value is valid 
+              if(!(i == row && j == col)) { // if not the center
+                  board[i][j] = 'X';
+              }  
+            }
+            
         }
+    }
+      
+  }
+
+    // my original approach below:
+    // *******************************
+    // int maxRowVal = board.length - 1;
+    // int maxColVal = board[0].length - 1;
+
+      
+
+    // // (r-1, c-1), (r-1, c), (r-1, c)
+    // if (row - 1 >= 0) { // row above is ok
+    //     if(col - 1 >= 0) { // col to left is ok
+    //         board[row - 1][col - 1] = 'X'; 
+    //     }
         
-        board[row - 1][col] = 'X'; // checked
+    //     board[row - 1][col] = 'X'; // checked
 
-        if(col + 1 <= maxColVal) { // if col to right is ok
-            board[row - 1][col + 1] = 'X';
-        }
-    }
+    //     if(col + 1 <= maxColVal) { // if col to right is ok
+    //         board[row - 1][col + 1] = 'X';
+    //     }
+    // }
 
-    // (r, c-1) and (r, c+1)
-    if(col - 1 >= 0) { // row ok, col to left ok
-            board[row][col - 1] = 'X';
-    }
-    if(col + 1 <= maxColVal) { // row ok, col to right ok
-        board[row][col + 1] = 'X';
-    }
+    // // (r, c-1) and (r, c+1)
+    // if(col - 1 >= 0) { // row ok, col to left ok
+    //         board[row][col - 1] = 'X';
+    // }
+    // if(col + 1 <= maxColVal) { // row ok, col to right ok
+    //     board[row][col + 1] = 'X';
+    // }
 
-    // (r+1, c-1), (r+1, c), (r+1, c+1)
-    if (row + 1 <= maxRowVal) { // row below is ok 
-        if(col - 1 >= 0) { 
-            board[row + 1][col - 1] = 'X';
-        }
+    // // (r+1, c-1), (r+1, c), (r+1, c+1)
+    // if (row + 1 <= maxRowVal) { // row below is ok 
+    //     if(col - 1 >= 0) { 
+    //         board[row + 1][col - 1] = 'X';
+    //     }
         
-        board[row + 1][col] = 'X';
+    //     board[row + 1][col] = 'X';
 
-        if(col + 1 <= maxColVal) {
-            board[row + 1][col + 1] = 'X';
-        }
-    }
+    //     if(col + 1 <= maxColVal) {
+    //         board[row + 1][col + 1] = 'X';
+    //     }
+    // }
+    // *********end of original approach*******
     
 
       
@@ -326,8 +356,8 @@ public class Array2DPractice
      System.out.println("Printing out board b with modified row:");
     printBoard(b);
 
-    System.out.println("Printing out board b, exploding:");  
-    explodeSquare(b, 4, 9);
+    System.out.println("Printing out board b, exploding: 0,0");  
+    explodeSquare(b, 0, 0);
     printBoard(b);
 
     System.out.println("Printing out board c with highness");  
