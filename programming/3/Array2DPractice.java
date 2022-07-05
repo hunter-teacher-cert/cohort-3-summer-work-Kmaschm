@@ -336,7 +336,7 @@ public class Array2DPractice
          maxVal = board.length;
      } 
      for(int i = 0; i < maxVal; i++) {
-         board[i][col] = word.charAt(i);
+         board[row+i][col] = word.charAt(i);
      } 
   }
 
