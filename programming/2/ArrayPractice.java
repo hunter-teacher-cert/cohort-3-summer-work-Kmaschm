@@ -16,7 +16,7 @@
    2. buildRandomArray ✅
    3. printArray ✅
    4. arraySum ✅
-   5. firstOccurence 
+   5. firstOccurence ✅
    6. isSorted ✅
    7. findMaxValue ✅
    8. countOdds ✅
@@ -147,8 +147,7 @@ public class ArrayPractice
             index = i;
         }
     }
-    
-    return index; // change this (it is just a placeholder to "get past" the compiler)
+    return index; 
   }
 
 
@@ -271,7 +270,8 @@ public class ArrayPractice
   public static void flip( int[] data ) {
     // Note: only need to go halfway across the array
     // check if the length is even (go up to halfway) or odd (go to 1 less than halfway)
-      int halfIndex = (data.length % 2 == 1) ? data.length/2 : (data.length - 1)/2;
+      int halfIndex = (data.length % 2 == 0) ? data.length/2 : (data.length - 1)/2;
+      // NOTE: integer division makes dealing with caes not necessary, but happy to keep this.
        
       int temp; // hold value for us temporarily
       
