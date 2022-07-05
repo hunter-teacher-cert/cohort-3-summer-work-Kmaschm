@@ -332,7 +332,7 @@ public class Array2DPractice
   public static void downString( char[][] board, int row, int col, String word )
   {
      // help from group thinking through this one:
-     for(int i = 0; i < board.length - row; i++) { // won't go past end of rows
+     for(int i = 0; i < board.length - row; i++) { // won't go past end of the board
         if(i < word.length()) { // if we haven't hit the end of the word
              board[row+i][col] = word.charAt(i);
         }
