@@ -4,10 +4,10 @@ import java.util.*;
 /**
  * Conway's Game of Life by Team AreWeSentientYet?
  * collaborators: 
- * Yeidy Levels - YLevels
- * Usman Ahmed - usman0527
- * Rachel Kaufman - RACHELKAUFMAN
- * Kate Maschmeyer - kmaschm
+ * Yeidy Levels - YLevels <-- driving
+ * Usman Ahmed - usman0527 <-- designated slacker
+ * Rachel Kaufman - RACHELKAUFMAN <-- collab
+ * Kate Maschmeyer - kmaschm <-- collab
  * 
  * 
  */
@@ -30,7 +30,10 @@ import java.util.*;
 
 public class Cgol
 {
-
+  
+final static char ALIVE = 'X'; 
+final static char DEAD = ' ';
+  
   //create, initialize, and return empty board (all cells dead)
   public static char[][] createNewBoard( int rows, int cols )
   {
@@ -39,7 +42,7 @@ public class Cgol
       {
         for (int j = 0; j < cols; j++) 
         {
-          board[i][j] = ' ';
+          board[i][j] = DEAD;
         }
       }
       return board;
@@ -77,8 +80,44 @@ public class Cgol
   //return number of living neigbours of board[r][c]
   public static int countNeighbours( char[][] board, int r, int c )
   {
-    
-    return 0;
+    int counter = 0;
+    int rows = board.length;
+    int cols = board[0].length; 
+
+    // r = row, c = col
+    // local rows: r-1, r, r+1
+    // local cols: c-1, c, c+1
+ 
+    // r-1, c-1 | r-1, c | r-1, c+1
+    // r, c-1   | r, c   | r,  c+1
+    // r+1, c-1 | r+1, c | r+1, c+1
+      
+    // go through local rows
+    for (int i = r-1; i <= r+1; i++) 
+    {
+      // make sure row value is valid
+      if (i >= 0 && i < rows) 
+      { 
+        // go through local cols
+        for (int j = c-1; j <= c+1; j++) 
+        { 
+          // make sure col value is valid
+          if (j >= 0 && j < cols) 
+          { 
+            // check that we're not in the center
+            if (!(i == r && j == c)) 
+            {
+              // if the neighbor is alive, count them!
+              if (board[i][j] == ALIVE) 
+              {
+                counter++;
+              }
+            }
+          }
+        }
+      }
+    }
+    return counter;
   }
 
 
@@ -89,14 +128,34 @@ public class Cgol
   */
   public static char getNextGenCell( char[][] board,int r, int c )
   {
-    return 'X';
+  char currentStatus = board[r][c];
+  int aliveNeighbours = countNeighbours(board, r, c);
+    //call countNeighbour 
+    //if you are dead do this
+    if (currentStatus == DEAD && aliveNeighbours == 3) 
+    {
+      return ALIVE;
+    }
+    if ((currentStatus == ALIVE) && (aliveNeighbours == 2 || aliveNeighbours == 3)) 
+    {
+        return ALIVE;
+    }
+    return DEAD;
   }
 
 
   //generate and return a new board representing next generation
   public static char[][] generateNextBoard( char[][] board )
   {
-    return board;
+    char[][] nextBoard = new char[board.length][board[0].length];
+    for (int i = 0; i < board.length; i++) 
+    {
+      for (int j = 0; j < board[i].length; j++) 
+      {
+        setCell (nextBoard, i, j, getNextGenCell(board, i, j)); 
+      }
+    }
+    return nextBoard;
   }
 
 
@@ -139,6 +198,14 @@ public class Cgol
     setCell(board, 1, 0, 'X');
     printBoard(board);
     System.out.println("--------------------------\n\n");
+    System.out.println(countNeighbours(board, 0, 0)); // 2
+    System.out.println(countNeighbours(board, 0, 1)); // 2
+    System.out.println(countNeighbours(board, 2, 1)); // 1
+    System.out.println(countNeighbours(board, 5, 5)); // 0
+
+    System.out.println(getNextGenCell(board, 1, 1)); // X
+    System.out.println(getNextGenCell(board, 1, 0)); // X
+    System.out.println(getNextGenCell(board, 1, 2)); //returned a space for DEAD
   }//end main()
 
 }//end class

@@ -185,7 +185,7 @@ public class Array2DPractice
  // 
 
 // approach after David's suggestions/work; think this is more efficient!:
-  for(int i  = row - 1; i <= row + 1; i++) { // go through local rows
+  for(int i = row - 1; i <= row + 1; i++) { // go through local rows
     if(i >= 0 && i < board.length) { // make sure row value is valid
         for(int j = col - 1; j <= col + 1; j++) { // go through local cols 
             if(j >= 0 && j < board[0].length) { // make sure col value is valid 
