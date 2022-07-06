@@ -3,8 +3,13 @@ import java.util.*;
 
 /**
  * Conway's Game of Life by Team AreWeSentientYet?
- * First Last
- * collaborators: First Last, First Last
+ * collaborators: 
+ * Yeidy Levels - YLevels
+ * Usman Ahmed - usman0527
+ * Rachel Kaufman - RACHELKAUFMAN
+ * Kate Maschmeyer - kmaschm
+ * 
+ * 
  */
 
 /**
@@ -26,10 +31,17 @@ import java.util.*;
 public class Cgol
 {
 
-  //create, initialize, and return  empty board (all cells dead)
+  //create, initialize, and return empty board (all cells dead)
   public static char[][] createNewBoard( int rows, int cols )
   {
       char[][] board = new char[rows][cols];
+      for (int i = 0; i < rows; i++) 
+      {
+        for (int j = 0; j < cols; j++) 
+        {
+          board[i][j] = ' ';
+        }
+      }
       return board;
   }
 
@@ -37,20 +49,35 @@ public class Cgol
   //print the board to the terminal
   public static void printBoard( char[][] board )
   {
-
+      // when printing, we'll put '.' for the dead cells just to be able see it
+      for (int i = 0; i < board.length; i++) 
+      {
+        for (int j = 0; j < board[i].length; j++) 
+        {
+          if (board[i][j] == ' ') 
+          {
+            System.out.print(". ");  
+          } 
+          else {
+            System.out.print(board[i][j] + " ");
+          }
+        }
+        System.out.println(); 
+      }
   }
 
 
   //set cell (r,c) to val
   public static void setCell( char[][] board, int r, int c, char val )
   {
-
+    board[r][c] = val;
   }
 
 
   //return number of living neigbours of board[r][c]
   public static int countNeighbours( char[][] board, int r, int c )
   {
+    
     return 0;
   }
 
@@ -99,6 +126,19 @@ public class Cgol
     printBoard(board);
     System.out.println("--------------------------\n\n");
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    //creates the empty board with dead cells
+    char[][] board;
+    board = createNewBoard(25,25);
+    printBoard(board);
+    System.out.println("--------------------------\n\n");
+
+    //puts living cells into top left corner of board and prints it out
+    setCell(board, 0, 0, 'X');
+    setCell(board, 0, 1, 'X');
+    setCell(board, 1, 0, 'X');
+    printBoard(board);
+    System.out.println("--------------------------\n\n");
   }//end main()
 
 }//end class
