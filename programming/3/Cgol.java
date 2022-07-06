@@ -30,7 +30,8 @@ import java.util.*;
 
 public class Cgol
 {
-  
+
+// initialize our states
 final static char ALIVE = 'X'; 
 final static char DEAD = ' ';
   
@@ -84,7 +85,7 @@ final static char DEAD = ' ';
     int rows = board.length;
     int cols = board[0].length; 
 
-    // r = row, c = col
+    // r = row, c = column
     // local rows: r-1, r, r+1
     // local cols: c-1, c, c+1
  
@@ -193,19 +194,43 @@ final static char DEAD = ' ';
     System.out.println("--------------------------\n\n");
 
     //puts living cells into top left corner of board and prints it out
-    setCell(board, 0, 0, 'X');
-    setCell(board, 0, 1, 'X');
-    setCell(board, 1, 0, 'X');
+    // setCell(board, 0, 0, 'X');
+    // setCell(board, 0, 1, 'X');
+    // setCell(board, 1, 0, 'X');
+    // setCell(board, 2, 2, 'X');
+    // setCell(board, 3, 3, 'X');
+    // setCell(board, 2, 3, 'X');
+    for (int i = 0; i < board.length; i++) 
+    {
+      for (int j = 0; j < board[i].length; j++) 
+      {
+        if (Math.random() > .9) 
+        {
+          setCell (board, i, j, ALIVE);
+        }
+      }
+    }
+   
+    System.out.println("Generation 0");
     printBoard(board);
     System.out.println("--------------------------\n\n");
-    System.out.println(countNeighbours(board, 0, 0)); // 2
-    System.out.println(countNeighbours(board, 0, 1)); // 2
-    System.out.println(countNeighbours(board, 2, 1)); // 1
-    System.out.println(countNeighbours(board, 5, 5)); // 0
+    // System.out.println(countNeighbours(board, 0, 0)); // 2
+    // System.out.println(countNeighbours(board, 0, 1)); // 2
+    // System.out.println(countNeighbours(board, 2, 1)); // 1
+    // System.out.println(countNeighbours(board, 5, 5)); // 0
 
-    System.out.println(getNextGenCell(board, 1, 1)); // X
-    System.out.println(getNextGenCell(board, 1, 0)); // X
-    System.out.println(getNextGenCell(board, 1, 2)); //returned a space for DEAD
+    // System.out.println(getNextGenCell(board, 1, 1)); // X
+    // System.out.println(getNextGenCell(board, 1, 0)); // X
+    // System.out.println(getNextGenCell(board, 1, 2)); //returned a space for DEAD
+   for (int i = 1; i < 10; i++) 
+    {
+    board = generateNextBoard (board);
+    System.out.println("Generation " + i);
+    printBoard(board);
+    System.out.println("--------------------------\n\n");
+    }
+    
+    
   }//end main()
 
 }//end class
