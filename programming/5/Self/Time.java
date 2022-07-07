@@ -4,11 +4,8 @@ import java.util.*;
 
 /**
  * Time class by Team LucidThinkeren
-  * Kate Maschmeyer
- * collaborators:
- * Alicia Wade
- * Marieke Thomas
- * Moo Joon Park
+ * First Last
+ * collaborators: First Last, First Last
  */
 
 /**
@@ -24,12 +21,12 @@ import java.util.*;
 
    Basic level (complete all):
    - public Time(int hrs, int mins, int secs) - constructor
-   - public String toString()
+   - public void toString()
    - public void set(int hrs, int mins, int secs)
 
    Intermediate level (complete Basic methods plus this method):
    - public void add(Time other)
-   - public boolean equals(Time other)
+   - public boolean isEquals(Time other)
 
    
    Advanced level (complete Basic + Intermediate + these two methods):
@@ -53,16 +50,20 @@ public class Time {
     	this.hours = 0;
     	this.minutes = 0;
     	this.seconds = 0;
+	
     }
 
     /**
        Parameters:
        - hrs, mins, secs - the time you want to create the class as
+
        Initialize this instance to represent hrs:mins:secs as the time.
        
      */
     public Time(int hrs, int mins, int secs){
-      this.hours = hrs;
+
+	// your code here
+	    this.hours = hrs;
       this.minutes = mins;
       this.seconds = secs;
     }
@@ -74,9 +75,8 @@ public class Time {
        returns a string representation of the time
     */
     public String toString(){
-
-      // make this pretty later (leading 0s when needed)
-	    return(this.hours + ":" + this.minutes + ":" + this.seconds);
+      
+	 return (this.hours + " hrs " + this.minutes + " mins " + this.seconds + " secs");
     }
 
 
@@ -89,11 +89,12 @@ public class Time {
        modifies this instance to represent the time hrs:mins:secs
     */
     public void set(int hrs, int mins, int secs){
-    	// add the code to add the time represented by other
-    	// to this instance.
+	// add the code to add the time represented by other
+	// to this instance.
       this.hours = hrs;
       this.minutes = mins;
       this.seconds = secs;
+
     }
 
     
@@ -106,14 +107,12 @@ public class Time {
        the time other.
     */
     public void add(Time other){
-    	// add the code to add the time represented by other
-    	// to this instance.
-      this.hours = this.hours + other.hours + (this.minutes + other.minutes) / 60;
-      
-      this.minutes = ((this.minutes + other.minutes)  
-        + (this.seconds + other.seconds) / 60) % 60;
-      
-      this.seconds = (this.seconds + other.seconds) % 60;
+	// add the code to add the time represented by other
+	// to this instance.
+      this.hours += other.hours;
+      this.minutes += other.minutes;
+      this.seconds += other.seconds;
+
     }
 
 
@@ -126,13 +125,17 @@ public class Time {
        false otherwise.
     */
     public boolean equals(Time other){
-	    if(this.hours == other.hours 
-         && this.minutes == other.minutes
-         && this.seconds == other.seconds) {
-            return true;
-         }
-	    return false; 
+	// your code here)
+      if(this.hours == other.hours 
+        && this.minute == other.minutes 
+        && this.seconds == other.seconds) {
+          return true;
+        } else {
+          return false;
+        }
+	
     }
+
     /**
        Parameters:
        other - a variable of type Time
@@ -148,7 +151,20 @@ public class Time {
 
     */
     public int compareTo(Time other){
-	// your code here)
+      static int GREATER = 1;
+      static int LESS = -1;
+      static int EQUAL = 0;
+
+      
+      if(this.hours > other.hours) {
+        return GREATER;
+      } else {
+        
+        if(this.minutes > other.minutes) {
+          return GREATER;
+        } 
+        
+      }
 
 	return 0; // change this
     }
