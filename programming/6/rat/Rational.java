@@ -70,7 +70,12 @@ public class Rational
   // uses the most precise floating point primitive
   public double floatValue()
   {
-    return (double) this._numerator / this._denominator; 
+    if(this._denominator != 0) {
+      return (double) this._numerator / this._denominator; 
+    } else {
+      System.out.println("Invalid demonimator for division");
+      return -1.0;
+    }
   }
 
 
@@ -91,7 +96,18 @@ public class Rational
   // same as multiply, except operation is division
   public void divide( Rational r )
   {
+    multiply(r.reciprocal());
+  }
+
+  // helper function
+  public Rational reciprocal() {
+    // determine reciprocal
+    if(this._numerator == 0) {
+      System.out.println("Reciprocal creates invalid rational number; defaulting to 0/1");
+    } 
     
+      Rational r1 = new Rational(this._denominator, this._numerator);
+      return r1;
   }
 
 }//end class

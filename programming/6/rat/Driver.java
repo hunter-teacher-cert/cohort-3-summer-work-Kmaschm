@@ -33,10 +33,15 @@ public class Driver
       System.out.print( r + " * " + t + " = ");
       r.multiply(t);
       System.out.println(r);
- /*~~~~~v~~~~~~~~~~down~goer~3~~~~~~~~~~~~~v~~~~~
+
+      Rational y = r.reciprocal();
+    
       System.out.print( r + " / " + t + " = ");
       r.divide(t);
       System.out.println(r);
+
+      
+    /*~~~~~v~~~~~~~~~~down~goer~3~~~~~~~~~~~~~v~~~~~
       ~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~*/
   }
 
