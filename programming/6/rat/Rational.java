@@ -94,6 +94,7 @@ public class Rational
 
   // divide
   // same as multiply, except operation is division
+  // Multiplying by the reciprocal of a fraction is equivalent to dividing by a fraction
   public void divide( Rational r )
   {
     multiply(r.reciprocal());
