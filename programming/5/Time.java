@@ -74,9 +74,7 @@ public class Time {
        returns a string representation of the time
     */
     public String toString(){
-
-      // make this pretty later (leading 0s when needed)
-	    return(this.hours + ":" + this.minutes + ":" + this.seconds);
+	    return String.format("%02d:%02d:%02d", this.hours, this.minutes, this.seconds);
     }
 
 
@@ -89,8 +87,6 @@ public class Time {
        modifies this instance to represent the time hrs:mins:secs
     */
     public void set(int hrs, int mins, int secs){
-    	// add the code to add the time represented by other
-    	// to this instance.
       this.hours = hrs;
       this.minutes = mins;
       this.seconds = secs;
@@ -105,15 +101,11 @@ public class Time {
        modifies this instance to represent the result of adding it and
        the time other.
     */
+    	//uses integer division and modular arithmetic
     public void add(Time other){
-    	// add the code to add the time represented by other
-    	// to this instance.
-      this.hours = this.hours + other.hours + (this.minutes + other.minutes) / 60;
-      
-      this.minutes = ((this.minutes + other.minutes)  
-        + (this.seconds + other.seconds) / 60) % 60;
-      
-      this.seconds = (this.seconds + other.seconds) % 60;
+     this.hours = this.hours + other.hours + (this.minutes + other.minutes + (this.seconds+other.seconds)/60)/60;
+      this.minutes = (this.minutes + other.minutes + (this.seconds+other.seconds)/60)%60;
+      this.seconds = (this.seconds + other.seconds)%60;
     }
 
 
@@ -149,10 +141,30 @@ public class Time {
     */
     public int compareTo(Time other){
 	// your code here)
+      int GREATER = 1; // this > other
+      int EQUALS = 0;
+      int LESS = -1; // this < other
 
-	return 0; // change this
+      if(this.hours > other.hours) {
+        return GREATER;
+      } else if(this.hours < other.hours) {
+        return LESS;
+      } else { // this.hours == other.hours
+        if(this.minutes > other.minutes) {
+          return GREATER;
+        } else if(this.minutes < other.minutes) {
+          return LESS;
+        } else { // this.minutes == other.minutes
+          if(this.seconds > other.seconds) {
+            return GREATER;
+          } else if(this.seconds < other.seconds) {
+            return LESS;
+          } else { // this.seconds == other.seconds
+            return EQUALS;
+        }
+      }
     }
-    
+  }  
 
     
 }//end class
