@@ -72,7 +72,7 @@ public class Rational
   {
     if(this._denominator != 0) {
       return (double) this._numerator / this._denominator; 
-    } else {
+    } else { // should not get here!
       System.out.println("Invalid demonimator for division");
       return -1.0;
     }
