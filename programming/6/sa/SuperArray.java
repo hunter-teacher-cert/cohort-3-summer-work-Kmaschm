@@ -81,7 +81,6 @@ public class SuperArray
     this.numberElements = 0; // no elements actually filled yet
   }
 
-
   //overloaded constructor -- allows specification of initial capacity
   public SuperArray( int size )
   {
@@ -102,23 +101,17 @@ public class SuperArray
   public void add( int value )
   {
     // test to see if we need to grow, then grow
-    /**
-       IMPORTANT: 
-        Implement the rest of this method first, <-- ⚠️⚠️ rephrased for clarity ⚠️⚠️
-       then only write this section once the rest is tested and working. 
-    */
-
-    
-    if(numberElements == data.length) { // we are currently at capacity
-      //System.out.println("Growing array");
+  
+    if(this.data.length == this.numberElements) { // we are currently at capacity
+      //System.out.println("About to grow array");
       grow(); // grow the array first
      }
     
      //System.out.println("Added " + value + " at location " + numberElements);
 
     // NOTE: if numberElements fill in an array, then the last element is at (numberElements - 1).  We add the next value at the numberElements index.
-     data[numberElements] = value; // add value to end 
-    numberElements++; // make sure we update our count
+    this.data[this.numberElements] = value; // add value to end 
+    this.numberElements++; // make sure we update our count
 
   }//end add()
 
@@ -149,11 +142,11 @@ public class SuperArray
   */
   public int get(int index)
   {
-    if(index > numberElements) {
+    if(index > this.numberElements) {
       System.out.println("Index is out of bounds");
       return Integer.MIN_VALUE;
     }
-    return data[index];
+    return this.data[index];
   }
 
 
@@ -167,7 +160,7 @@ public class SuperArray
   {
     String sArr = ""; // initialize to empty String so that concatenated integers will be casted to Strings
     sArr = sArr + "{"; // starting to print as array
-    for(int i = 0; i < numberElements; i++) {
+    for(int i = 0; i < this.numberElements; i++) {
       if(i == 0) { // starting element
         sArr = sArr + this.get(i);
       } else {
@@ -205,6 +198,12 @@ public class SuperArray
   */
   public void remove(int index)
   {
+    if(index < numberElements) { // valid index
+      
+    } else {
+      System.out.println();
+    }
+ 
     // shift items down to remove the item at index
     /* YOUR SIMPLE+SMART CODE HERE */
 
@@ -215,27 +214,48 @@ public class SuperArray
 
  /** 
   * Takes in an integer called index and an integer called value.  
-  * If index is out of bounds, print error message and add nothing
+  * NOTE: gaps are not allowed in this version of  SuperArray - if index > numberElements (past appending the value to the end of the array, warning statement will be printed and nothing will be added)
+  * 
   *
   * @param  index  integer, location in array to add specified value 
   * @param  value  integer, value to add at specified index
   */
   public void add(int index, int value)
   {
-   
-      
+    // NOT ALLOWING GAPS
+    // while(index >= this.data.length) { // 
+    //   System.out.println("Increasing capacity to reach desired index");
+    //   grow();
+    // }
+
     
-    // see if there's enough room
-    /* YOUR SIMPLE+SMART CODE HERE */
+    if(index > numberElements) {
+      System.out.println("Index out of bounds. Greatest index available: " + numberElements);
+    
+    } else {
+      
+      if(this.data.length == this.numberElements) { // we are currently at capacity 
+        grow();
+      }
 
-    // shift elements toward the end of the array
-    /* YOUR SIMPLE+SMART CODE HERE */
+       // shift elements toward the end of the array
+      for(int i = this.numberElements - 1; i >= index; i--) { // start at last element, move inward
+        //System.out.println("Setting location " + (i+1) + " to " + this.get(i));
+        this.data[i+1] = this.get(i);
+      }
 
-    // insert new element
-    /* YOUR SIMPLE+SMART CODE HERE */
+      // insert new element
+      // System.out.println("Inserting " + value + " at location " + index);
+      this.data[index] = value;
 
-    // increment numElements
-    /* YOUR SIMPLE+SMART CODE HERE */
+      // increment numberElements
+      this.numberElements++;
+      
+      // NO GAPS:
+      // this.numberElements = Math.max(index+1, this.numberElements + 1);
+  
+    }
+    
   }
 
 
@@ -243,11 +263,12 @@ public class SuperArray
   // ✅ SWITCHED BACK TO PRIVATE AFTER TESTING
   private void grow()
   {
+    //System.out.println("Growing array");
     // create a new array that is 5 units larger (as specified!)  
-    int[] grownArr = new int[this.data.length+5];
+    int[] grownArr = new int[this.data.length + 5];
 
     // copy elements from old array into new one
-    for(int i = 0; i < numberElements; i++) {
+    for(int i = 0; i < this.numberElements; i++) {
       grownArr[i] = this.data[i];
     }
 

@@ -34,15 +34,23 @@ public class SuperArrayDriver
     }//for i
     System.out.println(sa);
     System.out.println(sa.isEmpty());
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+    System.out.println("Inspecting current SA");
+    System.out.println(sa.debug());
+    
     System.out.println("\nTesting add at index 5, 0 and 17(end)");
     sa.add(5, 100);
+    //System.out.println(sa.debug());
     System.out.println(sa);
+
     sa.add(0, 100);
     System.out.println(sa);
     sa.add(17, 100);
     System.out.println(sa);
 
+    sa.add(25, 150);
+    System.out.println(sa);
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     System.out.println("\nTesting remove at 0, 5, and 15 (end)");
     sa.remove(0);
     System.out.println(sa);
