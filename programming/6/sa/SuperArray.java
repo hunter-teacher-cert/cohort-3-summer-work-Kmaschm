@@ -21,7 +21,7 @@ import java.io.*;
 import java.util.*;
 
 /*
-* According to https://github.com/hunter-teacher-cert/cs-ed-cohort-3-summer-2022/tree/main/daily/6
+* According to https://github.com/hunter-teacher-cert/cs-ed-cohort-3-summer-2022/tree/main/daily/6  (toString() not listed, so added to Basic)
 *
 * ***Basic***
 * Add/write:
@@ -37,6 +37,8 @@ import java.util.*;
 *     adds value to the end of the SuperArray (after the last added element)
 * > isEmpty() ✅
 *     return true if the SuperArray is empty, false otherwise.
+*  > toString() ✅ - ADDED, SINCE IT WAS NOT LISTED
+*    return a String version of SuperArray in human-readable format
 
 * ***Intermediate ***
 * Add/write:
@@ -59,7 +61,7 @@ import java.util.*;
 * Write:
 * > add(index,value) ✅
 *     Adds value at location index. You should shift the data to create an open space if you need to and you can use grow() if you need to make the array larger.
-* > remove(index) ✅
+* > remove(index) 
     Removes the location at index by shifting all the elements after location index and subtracting one from numberElements
 *
 *
@@ -93,7 +95,7 @@ public class SuperArray
   // ~~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~
 
   /** 
-  * Takes in an integer, value, and appends the value to our SuperArray
+  * Takes in an integer called value and appends the value to our SuperArray
   * Note: makes sure to check the size of underlying array & grow/copy if possible, then appends
   *
   * @param value  integer, we want to append this to our SuperArray
@@ -133,7 +135,7 @@ public class SuperArray
 
   
   /** 
-  * Takes in an integer, index, and returns the value at that index
+  * Takes in an integer called index, and returns the value at that index
   * If we have not stored a value at that index, prints error message, will return Integer.MIN_VALUE
   *
   *
@@ -149,6 +151,8 @@ public class SuperArray
     return this.data[index];
   }
 
+  
+  
 
   /** 
   * Returns a human-friendly String for our SuperArray
