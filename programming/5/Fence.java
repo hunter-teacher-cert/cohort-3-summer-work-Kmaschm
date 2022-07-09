@@ -5,6 +5,8 @@
  * Alicia Wade
  * Marieke Thomas
  * Moo Joon Park
+ *
+ * Work in file complete ✅
  */
 
 public class Fence
@@ -30,8 +32,6 @@ public class Fence
     } else {
       return fenceR(n-1) + "--|"; 
     }
-    
-    /* YOUR SIMPLE, SMART IMPLEMENTATION HERE */
   }
 
 
@@ -42,8 +42,5 @@ public class Fence
       System.out.println( i + "-post fences: " );
       System.out.println( fenceR(i) );
     }
-
-    /* feel free to add extra tests... */
-
   }
 }

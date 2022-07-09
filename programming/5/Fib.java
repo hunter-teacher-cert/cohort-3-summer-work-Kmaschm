@@ -5,12 +5,12 @@
  * Alicia Wade
  * Marieke Thomas
  * Moo Joon Park
+ * 
+ * Work in file complete ✅
  */
 
 public class Fib
 {
-
-  //your implementation of fib(n) here
   public static int fib(int n) {
     if(n == 0 || n == 1) {
       return n;
@@ -28,7 +28,6 @@ public class Fib
 
   public static void main( String[] args )
   {
-
       System.out.println( fib(0) ); // -> 0
       System.out.println( fib(1) ); // -> 1
       System.out.println( fib(2) ); // -> 1
