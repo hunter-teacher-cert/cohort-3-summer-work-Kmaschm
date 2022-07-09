@@ -57,9 +57,9 @@ import java.util.*;
 *
 * ***Advanced***
 * Write:
-* > add(index,value)
+* > add(index,value) ✅
 *     Adds value at location index. You should shift the data to create an open space if you need to and you can use grow() if you need to make the array larger.
-* > remove(index)
+* > remove(index) ✅
     Removes the location at index by shifting all the elements after location index and subtracting one from numberElements
 *
 *
@@ -199,16 +199,17 @@ public class SuperArray
   public void remove(int index)
   {
     if(index < numberElements) { // valid index
+      // shift items down to remove the item at index
+      for(int i = index; i < numberElements-1; i++) {
+        this.data[i] = this.get(i+1);
+      }
+      // subtract fom numberElements;
+      this.numberElements--;
       
     } else {
-      System.out.println();
+      System.out.println("Invalid index.");
     }
  
-    // shift items down to remove the item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-    // subtract fom numElements;
-    /* YOUR SIMPLE+SMART CODE HERE */
   }
 
 

@@ -50,7 +50,7 @@ public class SuperArrayDriver
 
     sa.add(25, 150);
     System.out.println(sa);
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     System.out.println("\nTesting remove at 0, 5, and 15 (end)");
     sa.remove(0);
     System.out.println(sa);
@@ -60,7 +60,9 @@ public class SuperArrayDriver
 
     sa.remove(15);
     System.out.println(sa);
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+    sa.remove(15);
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
   }//main
 
