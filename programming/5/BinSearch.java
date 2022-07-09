@@ -1,6 +1,9 @@
 /**
  * Binary Search by Team Did You Mean Recursion?
  * Kate Maschmeyer
+
+ * [NOTE: Did not get to this as a group, so working on this by myself!]
+
  * collaborators:
  * Alicia Wade
  * Marieke Thomas
@@ -22,8 +25,6 @@ public class BinSearch
   */
   public static int binSearch ( int[] a, int target )
   {
-    //Q: Why did the designers of this class opt for 2 binSearch methods instead of 1?
-    //return binSearchRec( /* YOUR SMART CODE HERE */ );
     return binSearchRec( a, target, 0, a.length-1 );
   }
 
@@ -31,28 +32,38 @@ public class BinSearch
   public static int binSearchRec( int[] a, int target,
                                   int loPos, int hiPos )
   {
-    int tPos = -1; //init return var to flag/signal value
+    final int NOT_FOUND = -1; 
+    //int tPos = NOT_FOUND; //init return var to flag/signal value
 
-    int mPos = (lo + hi) / 2; //init tracker var for middle position
+    // NOTE: Typo?? should be loPos, hiPos
+    // int mPos = (lo + hi) / 2; //init tracker var for middle position
+    int mPos = (loPos + hiPos) / 2;
 
+    
     //exit case. If lo & hi have crossed, target not present
-    if ( /* YOUR SMART CODE HERE */ )
-      return /* YOUR SMART CODE HERE */ ;
-
+    if (hiPos < loPos) { // crossing happens when hi is less than lo
+      System.out.println("Target, " + target + ", not found.");
+      return NOT_FOUND;
+    }
+    
     // target found
-    if ( /* YOUR SMART CODE HERE */ ) {
-      /* YOUR SMART CODE HERE */
+    if ( a[mPos] == target) {
+       System.out.println("Target, " + target + ", found at location " + mPos);
+      return mPos;
     }
     // value at mid index higher than target
-    else if ( /* YOUR SMART CODE HERE */ ) {
-      /* YOUR SMART CODE HERE */
+    else if (a[mPos] > target) { // we need to look at the lower half, so set hi to 1 below current middle
+     // System.out.println("Target: " + target + ". Current location: " + mPos + " with value: " + a[mPos] + " is too high.");
+      hiPos = mPos - 1;
     }
     // value at mid index lower than target
-    else if ( /* YOUR SMART CODE HERE */ ) {
-      /* YOUR SMART CODE HERE */
+    else if ( a[mPos] < target) { // we need to look at the upper half, so set lo to 1 above middle location
+      // System.out.println("Target: " + target + ". At location " + mPos + ". Value: " + a[mPos] + " is too low.");
+      loPos = mPos + 1;
     }
 
-    return tPos;
+    return binSearchRec(a, target, loPos, hiPos);
+    
   }//end binSearchRec
 
 
@@ -60,8 +71,7 @@ public class BinSearch
   private static boolean isSorted( int[] arr )
   {
     boolean retBoo = true; //init to true, assume array is sorted
-
-    //Q: Why would a FOREACH loop not suffice here?
+    
     for( int i=0; i < arr.length-1; i++ ) {
       if ( ( arr[i] > arr[i+1] ) ) {
         return false;
@@ -89,8 +99,7 @@ public class BinSearch
   //main method for testing
   public static void main ( String[] args )
   {
-    //move the bar down to uncover tests in succession...
-    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
     System.out.println("\nNow testing binSearch on int array...");
 
     //Declare and initialize array of ints
@@ -106,28 +115,32 @@ public class BinSearch
     for( int i = 0; i < iArr3.length; i++ ) {
       iArr3[i] = i * 2;
     }
-
     //printArray( iArr3 );
     System.out.println( "iArr3 sorted? -- " + isSorted(iArr3) );
 
-    //search for 6 in array
+    System.out.println("***************");
+    System.out.print("Now testing binSearch on iArr2: ");
+    printArray( iArr2 );
+    System.out.println();
     System.out.println( binSearch(iArr2,2) );
     System.out.println( binSearch(iArr2,4) );
     System.out.println( binSearch(iArr2,6) );
     System.out.println( binSearch(iArr2,8) );
     System.out.println( binSearch(iArr2,13) );
     System.out.println( binSearch(iArr2,42) );
-
-    //search for 43 in array
+    //search for 43 in array2
     System.out.println( binSearch(iArr2,43) );
 
-    System.out.println( "now testing binSearch on iArr3..." );
+    System.out.println("***************");
+    System.out.println( "Now testing binSearch on iArr3 (even integers 0 to 2*9999)..." );
     System.out.println( binSearch(iArr3,4) );
     System.out.println( binSearch(iArr3,8) );
     System.out.println( binSearch(iArr3,5) );
 
     //search for 43 in array
     System.out.println( binSearch(iArr3,43) );
+        //move the bar down to uncover tests in succession...
+    /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
     /* YOUR SMART CODE HERE :: Feel free to add extra tests...*/
