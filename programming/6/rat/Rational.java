@@ -11,17 +11,17 @@
    and facilitate mathematical operations with another instance of class Rational.
 
    Basic level (complete all):
-   - toString
-   - default constructor
-   - multiply
-   - divide
+   - toString ✅
+   - default constructor ✅
+   - multiply ✅
+   - divide ✅ - created helper method reciprocal (not needed, but reasoning given  below)
 
    Intermediate level (complete Basic methods plus these methods):
-   - floatValue
-   - overloaded constructor
+   - floatValue ✅
+   - overloaded constructor ✅
 
    Advanced level (complete Basic + Intermediate + these methods):
-   -
+   - ⁇ ⍰ 🤔 (assume none)
 
 */
 
@@ -74,7 +74,7 @@ public class Rational
       return (double) this._numerator / this._denominator; 
     } else { // should not get here!
       System.out.println("Invalid demonimator for division");
-      return -1.0;
+      return Double.MAX_VALUE;
     }
   }
 
@@ -95,20 +95,26 @@ public class Rational
   // divide
   // same as multiply, except operation is division
   // Multiplying by the reciprocal of a fraction is equivalent to dividing by a fraction
+  // this can be done without helper method, but wanted to use one for: 1) clarity and 2) added functionality
   public void divide( Rational r )
   {
     multiply(r.reciprocal());
   }
 
-  // helper function
+  // helper method
+  // returns Rational that is reciprocal of (current) Rational
   public Rational reciprocal() {
+    Rational r1;
     // determine reciprocal
     if(this._numerator == 0) {
-      System.out.println("Reciprocal creates invalid rational number; defaulting to 0/1");
-    } 
-    
-      Rational r1 = new Rational(this._denominator, this._numerator);
-      return r1;
+      System.out.println("Reciprocal creates invalid rational number.");
+      r1 = new Rational(1, Integer.MAX_VALUE);
+      
+    } else {
+      r1 = new Rational(this._denominator, this._numerator);
+    }
+
+    return r1;
   }
 
 }//end class

@@ -40,6 +40,10 @@ public class Driver
       r.divide(t);
       System.out.println(r);
 
+      System.out.print( t + " / " + s + " = ");
+      t.divide(s);
+      System.out.println(t);
+
       
     /*~~~~~v~~~~~~~~~~down~goer~3~~~~~~~~~~~~~v~~~~~
       ~~~~~|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~|~~~~~*/
