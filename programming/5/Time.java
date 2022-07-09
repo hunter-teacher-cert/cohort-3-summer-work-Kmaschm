@@ -20,20 +20,20 @@ import java.util.*;
    could decide to change the internal representation to just store
    an int representing a number of seconds.
 
-   Place this file in a folder named programming/5/Time.java
+   Place this file in a folder named programming/5/Time.java ✅
 
    Basic level (complete all):
-   - public Time(int hrs, int mins, int secs) - constructor
-   - public String toString()
-   - public void set(int hrs, int mins, int secs)
+   - public Time(int hrs, int mins, int secs) - constructor ✅
+   - public String toString() ✅
+   - public void set(int hrs, int mins, int secs) ✅
 
    Intermediate level (complete Basic methods plus this method):
-   - public void add(Time other)
-   - public boolean equals(Time other)
+   - public void add(Time other) ✅
+   - public boolean equals(Time other) ✅
 
    
    Advanced level (complete Basic + Intermediate + these two methods):
-   - public int compareTo(Time other)
+   - public int compareTo(Time other) ✅
    
 */
 
@@ -101,11 +101,11 @@ public class Time {
        modifies this instance to represent the result of adding it and
        the time other.
     */
-    	//uses integer division and modular arithmetic
+    	//uses integer division and modular arithmetic - nice work from Marieke!
     public void add(Time other){
-     this.hours = this.hours + other.hours + (this.minutes + other.minutes + (this.seconds+other.seconds)/60)/60;
-      this.minutes = (this.minutes + other.minutes + (this.seconds+other.seconds)/60)%60;
-      this.seconds = (this.seconds + other.seconds)%60;
+     this.hours = this.hours + other.hours + (this.minutes + other.minutes + (this.seconds + other.seconds) / 60) / 60;
+      this.minutes = (this.minutes + other.minutes + (this.seconds + other.seconds) / 60) % 60;
+      this.seconds = (this.seconds + other.seconds) % 60;
     }
 
 
