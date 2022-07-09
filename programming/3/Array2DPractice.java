@@ -69,7 +69,6 @@ public class Array2DPractice
 
   /**
      pretty prints a 2D array of characters
-
      This should print the array as a grid
   */
   public static void printBoard( char[][] board )
@@ -91,8 +90,7 @@ public class Array2DPractice
      Returns:
      Nothing
 
-     Change the 2D array board so that all the elements in the
-     specified row are set to value.
+     Change the 2D array board so that all the elements in the specified row are set to value.
 
      Ex: Given array:
      xxxx
@@ -111,27 +109,27 @@ public class Array2DPractice
     for(int j = 0; j < board[row].length; j++) { // using j to help me remember we know the row and are touching each column in the row
         board[row][j] = value;
     }  
-    
   }
 
 
   /**
-     creates and returns a new 2D array of char the same size as
-     original and copies all the elements
+     creates and returns a new 2D array of char the same size as original and copies all the elements
   */
   public static char[][] copyBoard( char[][] original )
   {
-     int rows = original.length;
-      int cols = original[0].length;
-      char[][] copiedBoard = new char[rows][cols];
+    // set these up for readibility's sake
+    int rows = original.length;
+    int cols = original[0].length;
 
-      for(int i = 0; i < rows; i++) {
-          for(int j = 0; j < cols; j++) {
-              copiedBoard[i][j] = original[i][j];
-          }
+    // new board
+    char[][] copiedBoard = new char[rows][cols];
+
+    for(int i = 0; i < rows; i++) {
+      for(int j = 0; j < cols; j++) {
+         copiedBoard[i][j] = original[i][j];
       }
-      
-      return copiedBoard;
+    }
+    return copiedBoard;
   }
 
 
@@ -143,9 +141,7 @@ public class Array2DPractice
      Returns:
      nothing
 
-     A location in a 2D array can be though of as having 6
-     neighbors.  In the below 2D array, the neighbors of the element
-     marked Q are the numbered elements.
+     A location in a 2D array can be though of as having 6 neighbors.  In the below 2D array, the neighbors of the elementmarked Q are the numbered elements.
 
      oooooo
      o123oo
@@ -153,8 +149,7 @@ public class Array2DPractice
      o678oo
      oooooo
 
-     This method should change all the neighbor cells (elements) to an X
-     but not change the element at row,col
+     This method should change all the neighbor cells (elements) to an X but not change the element at row,col
 
      Ex:
      Given the 2D array
@@ -169,8 +164,7 @@ public class Array2DPractice
      XXXQQ
      QQQQQ
 
-     Note: Make sure to correctly handle the cases when you try
-     to explode an element on the edges.
+     Note: Make sure to correctly handle the cases when you try to explode an element on the edges.
   */
   public static void explodeSquare( char[][] board, int row, int col )
   {
@@ -182,21 +176,17 @@ public class Array2DPractice
  // r, c-1   | r, c   | r,  c+1
  // r+1, c-1 | r+1, c | r+1, c+1
       
- // 
-
 // approach after David's suggestions/work; think this is more efficient!:
   for(int i = row - 1; i <= row + 1; i++) { // go through local rows
     if(i >= 0 && i < board.length) { // make sure row value is valid
-        for(int j = col - 1; j <= col + 1; j++) { // go through local cols 
-            if(j >= 0 && j < board[0].length) { // make sure col value is valid 
-              if(!(i == row && j == col)) { // if not the center
-                  board[i][j] = 'X';
-              }  
-            }
-            
-        }
-    }
-      
+      for(int j = col - 1; j <= col + 1; j++) { // go through local cols 
+        if(j >= 0 && j < board[0].length) { // make sure col value is valid 
+          if(!(i == row && j == col)) { // if not the center
+            board[i][j] = 'X';
+          }  
+        }   
+      }
+    }   
   }
 
     // my original approach below:
@@ -213,9 +203,8 @@ public class Array2DPractice
     //     }
         
     //     board[row - 1][col] = 'X'; // checked
-
     //     if(col + 1 <= maxColVal) { // if col to right is ok
-    //         board[row - 1][col + 1] = 'X';
+    //       board[row - 1][col + 1] = 'X';
     //     }
     // }
 
@@ -239,18 +228,11 @@ public class Array2DPractice
     //         board[row + 1][col + 1] = 'X';
     //     }
     // }
-    // *********end of original approach*******
-    
-
-      
-      
-      
+    // *********end of original approach*******   
   }
 
   /**
-     This method will search through the 2D array board and it will
-     explode each square that contains the char c (using the above
-     definition of exploding).
+     This method will search through the 2D array board and it will explode each square that contains the char c (using the above definition of exploding).
 
      Example:
 
@@ -274,15 +256,17 @@ public class Array2DPractice
      qqqXz
 
   */
+
+  // NOTE: potential funkiness if characters are neighbors on the board; chose not to deal with at this time
   public static void explodeAllChar(char[][] board, char c)
   {
-      for(int i = 0; i < board.length; i++) {
-          for(int j = 0; j < board[0].length; j++) {
-              if(board[i][j] == c) {
-                  explodeSquare(board, i, j);
-              }
-          }
+    for(int i = 0; i < board.length; i++) {
+      for(int j = 0; j < board[0].length; j++) {
+        if(board[i][j] == c) {
+          explodeSquare(board, i, j);
+        }
       }
+    }
   }
 
 
@@ -292,8 +276,7 @@ public class Array2DPractice
      row,col - ints specifying a location in board
      word - a String that you want to insert into the board.
 
-     This will insert the parameter word into board in the downward
-     direction. See examples below
+     This will insert the parameter word into board in the downward direction. See examples below
 
      Example:
 
@@ -316,8 +299,7 @@ public class Array2DPractice
      xOxxxx
      xxxxxx
 
-     Given the above array, downString(board,4,3,"World") will
-     change board to:
+     Given the above array, downString(board,4,3,"World") will change board to:
 
      xxxxxx
      xHxxxx
@@ -331,7 +313,7 @@ public class Array2DPractice
   */
   public static void downString( char[][] board, int row, int col, String word )
   {
-     // help from group thinking through this one:
+     // I had help from group thinking through this one:
      for(int i = 0; i < board.length - row; i++) { // won't go past end of the board
         if(i < word.length()) { // if we haven't hit the end of the word
              board[row+i][col] = word.charAt(i);
@@ -370,14 +352,5 @@ public class Array2DPractice
     System.out.println("Printing out board b, exploding all #");  
     explodeAllChar(b, '#');
     printBoard(b);
-
-      
-      
-    /*
-      Note, you can directly set elements in the board
-      using array notation like b[3][2]='z' and you
-      can use array notation to also access individual
-      elements
-    */
   }
 }

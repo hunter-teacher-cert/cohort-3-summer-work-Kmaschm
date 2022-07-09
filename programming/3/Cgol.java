@@ -7,13 +7,16 @@ import java.util.*;
  * Yeidy Levels - YLevels <-- driving
  * Usman Ahmed - usman0527 <-- designated slacker
  * Rachel Kaufman - RACHELKAUFMAN <-- collab
- * Kate Maschmeyer - kmaschm <-- collab
+ * Kate Maschmeyer - kmaschm <-- collab, have made additional comments/formatting changes
  * 
  * 
  */
 
 /**
-   The Rules of Life:
+* MAY BE INTERESTED IN ANIMATION IN FUTURE - POSSIBLE TODO?
+   
+
+  The Rules of Life:
 
    Survivals:
    * A living cell with 2 or 3 living neighbours will survive for the next generation.
@@ -31,7 +34,7 @@ import java.util.*;
 public class Cgol
 {
 
-// initialize our states
+// initialize our states per specifications 
 final static char ALIVE = 'X'; 
 final static char DEAD = ' ';
   
@@ -53,16 +56,16 @@ final static char DEAD = ' ';
   //print the board to the terminal
   public static void printBoard( char[][] board )
   {
-      // when printing, we'll put '.' for the dead cells just to be able see it
+      // when printing, we'll put ". " for the dead cells just to be able see them
       for (int i = 0; i < board.length; i++) 
       {
         for (int j = 0; j < board[i].length; j++) 
         {
-          if (board[i][j] == ' ') 
+          if (board[i][j] == DEAD) 
           {
             System.out.print(". ");  
           } 
-          else {
+          else { // ALIVE: print ALIVE + " "
             System.out.print(board[i][j] + " ");
           }
         }
@@ -129,19 +132,18 @@ final static char DEAD = ' ';
   */
   public static char getNextGenCell( char[][] board,int r, int c )
   {
-  char currentStatus = board[r][c];
-  int aliveNeighbours = countNeighbours(board, r, c);
-    //call countNeighbour 
-    //if you are dead do this
+    char currentStatus = board[r][c];
+    int aliveNeighbours = countNeighbours(board, r, c);
+
     if (currentStatus == DEAD && aliveNeighbours == 3) 
     {
-      return ALIVE;
+      return ALIVE; // birth
     }
     if ((currentStatus == ALIVE) && (aliveNeighbours == 2 || aliveNeighbours == 3)) 
     {
-        return ALIVE;
+        return ALIVE; // survivors
     }
-    return DEAD;
+    return DEAD; // COD: overcrowding (> 3) or isolation (< 2)
   }
 
 
@@ -204,7 +206,7 @@ final static char DEAD = ' ';
     {
       for (int j = 0; j < board[i].length; j++) 
       {
-        if (Math.random() > .9) 
+        if (Math.random() > 0.9) // expect 10% of board alive 
         {
           setCell (board, i, j, ALIVE);
         }
