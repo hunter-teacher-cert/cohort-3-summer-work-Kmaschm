@@ -1,7 +1,7 @@
 /**
  * SuperArray by Team MarvelvsDC
- * First Last
- * collaborators: First Last, First Last
+ * Kate Maschmeyer
+ * collaborators: Nicole Cojuangco, Saranii Muller, Ashley Ufret
  */
 
 /**
@@ -20,87 +20,152 @@
 import java.io.*;
 import java.util.*;
 
+/*
+* According to https://github.com/hunter-teacher-cert/cs-ed-cohort-3-summer-2022/tree/main/daily/6
+*
+* ***Basic***
+* Add/write:
+* > SuperArray() ✅
+*     Basic constructor that:
+      1. Creates a new array of size 10 and assign data to refer to it. 
+      2. Sets the numberElements variable to 0.
+* > SuperArray(int size) ✅
+*     Constructor that:
+*     1. Creates a new array of size and assign data to refer to it. 
+      2. Sets the numberElements variable to 0.
+* > add(int value) ✅
+*     adds value to the end of the SuperArray (after the last added element)
+* > isEmpty() ✅
+*     return true if the SuperArray is empty, false otherwise.
+
+* ***Intermediate ***
+* Add/write:
+* > grow() 
+* ** Enlarges the SuperArray. It should:
+* ** Create a new array, 5 units larger
+* ** Copy the old data to the new array
+* ** Set the data instance variable to point to the new array
+*
+* Modify:
+* > add(int value) so that if the data array is filled it will:
+*     1. Grow the array using the grow method you just wrote.
+*     2. Add the new value to the array.
+* 
+* Add/write:
+* > get(index) - return the value at location index ✅
+*
+* ***Advanced***
+* Write:
+* > add(index,value)
+*     Adds value at location index. You should shift the data to create an open space if you need to and you can use grow() if you need to make the array larger.
+* > remove(index)
+    Removes the location at index by shifting all the elements after location index and subtracting one from numberElements
+*
+*
+*
+*/
+
 public class SuperArray
 {
-  /**
-     SUBGOAL:
-     declare instance vars
-     ...and initialize?
-  */
-
-
+ 
   //instance vars
   private int[] data;           // "interior"/"underlying" data container
   private int numberElements;   // number of "meaningful" elements
 
-
   // ~~~~~~~~~~~~~~~ CONSTRUCTORS ~~~~~~~~~~~~~~~
+   //default constructor -- initializes capacity to 10
+  public SuperArray()
+  {
+    this.data = new int[10]; // data can fit 10 elements
+    this.numberElements = 0; // no elements actually filled yet
+  }
+
+
   //overloaded constructor -- allows specification of initial capacity
   public SuperArray( int size )
   {
-
-    //init underlying/inner storage of specified capacity
-    data = new int[size];
-    //init instance vars
-    numberElements = 0;
+    this.data = new int[size]; // data can fit size # of elements
+    this.numberElements = 0; // no elements actually filled yet
   }
 
-  //default constructor -- initializes capacity to 10
-  public SuperArray()
-  {
-    //init underlying/inner storage of capacity 10
-    data = new int[10];
-    //init instance vars
-    numberElements = 0;
-  }
-
+ 
 
   // ~~~~~~~~~~~~~~~ METHODS ~~~~~~~~~~~~~~~
+
+  /** 
+  * Takes in an integer, value, and appends the value to our SuperArray
+  * Note: makes sure to check the size of underlying array & grow/copy if possible, then appends
+  *
+  * @param value  integer, we want to append this to our SuperArray
+  */
   public void add( int value )
   {
     // test to see if we need to grow, then grow
     /**
-       IMPORTANT:
-       This is the first code that should run in this method
-       but the last code you should write.
-       Implement the rest of this method first,
-       then only write this section once the rest is tested and working.
+       IMPORTANT: 
+        Implement the rest of this method first, <-- ⚠️⚠️ rephrased for clarity ⚠️⚠️
+       then only write this section once the rest is tested and working. 
     */
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-    // add item
-    /* YOUR SIMPLE+SMART CODE HERE */
-
-
-    // increment numberElements
-    /* YOUR SIMPLE+SMART CODE HERE */
-
+    
+    // if(numberElements == data.length) { // we are currently at capacity
+    //   grow(); // grow the array first
+    //  }
+    
+     data[numberElements + 1] = value; // add value to end
+     numberElements++; // make sure we update our count
   }//end add()
 
 
+
+  /** 
+  * Determines whether the SuperArray is empty (true if empty, false if not)
+  *
+  * @return boolean
+  */
   public boolean isEmpty()
   {
-    if(numberElements == 0) {
+    if(this.numberElements == 0) {
       return true;
     } else {
       return false; 
     }
-    //return whether this SuperArray instance is empty
-    /* YOUR SIMPLE+SMART CODE HERE */
   }
 
-
+  
+  /** 
+  * Takes in an integer, index, and returns the value at that index
+  * If we have not stored a value at that index, prints error message, will return Integer.MIN_VALUE
+  *
+  *
+  * @param   index   integer, we want to determine value at this index 
+  * @return  integer, value at given index
+  */
   public int get(int index)
   {
-    //return item at index
-    /* YOUR SIMPLE+SMART CODE HERE */
+    if(index > numberElements) {
+      System.out.println("Index is out of bounds");
+      return Integer.MIN_VALUE;
+    }
+    return data[index];
   }
 
 
+  /** 
+  * Returns a human-friendly String for our SuperArray
+  * Example: {7, 2, 15, 4}
+  *
+  * @return String, human-friendly version of SuperArray
+  */
   public String toString()
   {
-    //return stringified version of this Object
-    /* YOUR SIMPLE+SMART CODE HERE */
+    String sArr = ""; // initialize to empty String so that concatenated integers will be casted to Strings
+    sArr = sArr + "{"; // starting to print as array
+    for(int i = 0; i < numberElements; i++) {
+      sArr = sArr + ", " + data[i];
+    }
+    sArr = sArr + "}";
+    
+    return sArr;
   }//end toString()
 
 
@@ -120,6 +185,12 @@ public class SuperArray
   }//end debug()
 
 
+  /** 
+  * Takes in an integer, index, and returns the value at that index
+  *
+  * @param integer
+  * @return integer
+  */
   public void remove(int index)
   {
     // shift items down to remove the item at index
@@ -148,16 +219,16 @@ public class SuperArray
 
   private void grow()
   {
-    // create a new array with extra space
-    // Q: How did you decide how much to increase capacity by?
-    /* YOUR SIMPLE+SMART CODE HERE */
+    // create a new array twice the size of original  
+    int[] grownArr = new int[2*this.data.length];
 
-    // copy over all the elements from the old array to the new one
-    /* YOUR SIMPLE+SMART CODE HERE */
+    // copy elements from old array into new one
+    for(int i = 0; i < numberElements; i++) {
+      grownArr[i] = this.data[i];
+    }
 
-    // point data to the new array
-    // Q: How does this look when illustrated using encapsulation diagram?
-    /* YOUR SIMPLE+SMART CODE HERE */
+    this.data = grownArr;
+    
   }//end grow()
 
 }//end class
