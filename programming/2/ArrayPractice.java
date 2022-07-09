@@ -67,16 +67,9 @@ public class ArrayPractice
   {
     int[] data = new int[size];
 
-    // loop through each element of the array and
-    /* YOUR BRILLIANT CODE HERE */
     for(int i = 0; i < data.length; i++) {
         data[i] = step*i + startValue; // y = mx + b: m = step, x = i, startValue = b
-    }
-      
-
-    // assign the appropriate value to each one.
-    /* YOUR BRILLIANT CODE HERE */
-
+    } 
     return data;
   }
 
@@ -95,9 +88,9 @@ public class ArrayPractice
     Random r = new Random();
     int[] data = new int[size];
 
-      for(int i = 0; i < size; i++) {
-          data[i] = r.nextInt(maxValue);
-      }
+    for(int i = 0; i < size; i++) {
+      data[i] = r.nextInt(maxValue);
+    }
 
     return data;
   }
@@ -116,7 +109,6 @@ public class ArrayPractice
   */
   public static void printArray( int[] data )
   {
-    /* YOUR BRILLIANT CODE HERE */
       for(int i = 0; i < data.length; i++) {
         System.out.print(data[i] + " ");
     }
@@ -167,7 +159,7 @@ public class ArrayPractice
         sum += data[i];
     }
 
-    return sum; // replace this
+    return sum; 
   }
 
 
@@ -187,21 +179,20 @@ public class ArrayPractice
   */
   public static boolean isSorted( int[] data )
   {
-   // int currVal = data[0]; // where our pointer is
-      // updated after demo, thanks!
     for(int i = 0; i < data.length-1; i++) {
         if(data[i] > data[i+1]) { // if current is bigger than next
             return false;
         } 
-    }  
+    } 
+
+    return true; 
+    // Previous thought process:
+    // int currVal = data[0]; // where our pointer is
     // int i = 0;
     // while(i < data.length && currValue <= data[i]) {
     //     currValue = data[i];
     //     i++;
     // } <-- earlier thought process
-
-    return true; 
-
   }
 
   /**
@@ -210,19 +201,16 @@ public class ArrayPractice
 
      Returns:
      value of the largest element in the array
-
-    ***Assumes that all values in the array are 0 or greater!***
-
   */
   public static int findMaxValue( int[] data ) {
-    int m = data[0];  // will hold the maximum value
+    int m = data[0];  // will hold the maximum value, start with first value in array
 
     for(int i = 1; i < data.length; i++) {
         if(data[i] > m) {
             m = data[i];
         }
     }
-
+    
     return m;
   }
 
@@ -245,10 +233,6 @@ public class ArrayPractice
             count += 1;
         }
     }
-
-    // Note the % operator is the modulo (basically remainder) function
-    // in java. Use to determine if an integer is odd.
-
     return count;
   }
 
@@ -286,10 +270,6 @@ public class ArrayPractice
 
   public static void main( String[] args )
   {
-
-    // remove the comments as you complete each routine
-    // and add more lines as you add additional routines.
-
     int[] data = buildRandomArray(10, 20);
     int[] data2 = buildIncreasingArray(10,5,3);
     printArray(data);
