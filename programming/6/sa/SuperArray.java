@@ -40,14 +40,15 @@ import java.util.*;
 
 * ***Intermediate ***
 * Add/write:
-* > grow() 
+* > grow() ✅
 * ** Enlarges the SuperArray. It should:
 * ** Create a new array, 5 units larger
 * ** Copy the old data to the new array
 * ** Set the data instance variable to point to the new array
 *
 * Modify:
-* > add(int value) so that if the data array is filled it will:
+* > add(int value) ✅
+*     so that if the data array is filled it will:
 *     1. Grow the array using the grow method you just wrote.
 *     2. Add the new value to the array.
 * 
@@ -106,13 +107,19 @@ public class SuperArray
         Implement the rest of this method first, <-- ⚠️⚠️ rephrased for clarity ⚠️⚠️
        then only write this section once the rest is tested and working. 
     */
+
     
-    // if(numberElements == data.length) { // we are currently at capacity
-    //   grow(); // grow the array first
-    //  }
+    if(numberElements == data.length) { // we are currently at capacity
+      //System.out.println("Growing array");
+      grow(); // grow the array first
+     }
     
-     data[numberElements + 1] = value; // add value to end
-     numberElements++; // make sure we update our count
+     //System.out.println("Added " + value + " at location " + numberElements);
+
+    // NOTE: if numberElements fill in an array, then the last element is at (numberElements - 1).  We add the next value at the numberElements index.
+     data[numberElements] = value; // add value to end 
+    numberElements++; // make sure we update our count
+
   }//end add()
 
 
@@ -161,7 +168,12 @@ public class SuperArray
     String sArr = ""; // initialize to empty String so that concatenated integers will be casted to Strings
     sArr = sArr + "{"; // starting to print as array
     for(int i = 0; i < numberElements; i++) {
-      sArr = sArr + ", " + data[i];
+      if(i == 0) { // starting element
+        sArr = sArr + this.get(i);
+      } else {
+         sArr = sArr + ", " + this.get(i);
+      }
+     
     }
     sArr = sArr + "}";
     
@@ -186,10 +198,10 @@ public class SuperArray
 
 
   /** 
-  * Takes in an integer, index, and returns the value at that index
+  * Takes in an integer called index.  We will remove the value at the given index.
+  * If index is out of bounds, print error message and remove nothing
   *
-  * @param integer
-  * @return integer
+  * @param index   integer, we'll remove value at given index  
   */
   public void remove(int index)
   {
@@ -201,8 +213,18 @@ public class SuperArray
   }
 
 
+ /** 
+  * Takes in an integer called index and an integer called value.  
+  * If index is out of bounds, print error message and add nothing
+  *
+  * @param  index  integer, location in array to add specified value 
+  * @param  value  integer, value to add at specified index
+  */
   public void add(int index, int value)
   {
+   
+      
+    
     // see if there's enough room
     /* YOUR SIMPLE+SMART CODE HERE */
 
@@ -217,10 +239,12 @@ public class SuperArray
   }
 
 
+  
+  // ✅ SWITCHED BACK TO PRIVATE AFTER TESTING
   private void grow()
   {
-    // create a new array twice the size of original  
-    int[] grownArr = new int[2*this.data.length];
+    // create a new array that is 5 units larger (as specified!)  
+    int[] grownArr = new int[this.data.length+5];
 
     // copy elements from old array into new one
     for(int i = 0; i < numberElements; i++) {
