@@ -243,7 +243,7 @@ public class SuperArray
   * If we have not stored a value at that index, prints error message, will return Integer.MIN_VALUE
   *
   * @param   index   integer, we want to determine value at this index 
-  * @return  integer, value at given index
+  * @return  integer, value at given index (if index does not exist, return Integer.MIN_VALUE)
   */
   public int get(int index)
   {
@@ -286,8 +286,8 @@ public class SuperArray
     //   grow();
     // }
 
-    if(index > numberElements) {
-      System.out.println("Index out of bounds. Greatest index available: " + numberElements);
+    if(index > numberElements || index < 0) {
+      System.out.println("Index out of bounds. Lowest index available: 0, Greatest index available: " + numberElements);
     
     } else {
       
@@ -325,13 +325,14 @@ public class SuperArray
   */
   public void remove(int index)
   {
-    if(index < numberElements) { // valid index
+    if(index < numberElements && index >= 0) { // valid index
       // shift items down to remove the item at index
       for(int i = index; i < numberElements-1; i++) {
         //this.data[i] = this.get(i+1);
         this.set(i, this.get(i+1));
       }
-      // subtract fom numberElements;
+
+      // reduce numberElements by 1;
       this.numberElements--;
       
     } else {
