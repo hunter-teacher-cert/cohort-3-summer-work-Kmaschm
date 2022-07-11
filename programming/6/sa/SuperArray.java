@@ -287,7 +287,7 @@ public class SuperArray
     // }
 
     if(index > numberElements || index < 0) {
-      System.out.println("Index out of bounds. Lowest index available: 0, Greatest index available: " + numberElements);
+      System.out.println("Index out of bounds. Lowest index available for adding to array: 0, Greatest index available for adding to array: " + numberElements);
     
     } else {
       
@@ -336,7 +336,7 @@ public class SuperArray
       this.numberElements--;
       
     } else {
-      System.out.println("Invalid index.");
+       System.out.println("Index out of bounds. Lowest index available for removal: 0, Greatest index available for removal: " + (numberElements-1));
     }
  
   }
