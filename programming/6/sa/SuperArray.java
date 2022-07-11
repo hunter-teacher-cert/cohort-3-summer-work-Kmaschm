@@ -142,11 +142,12 @@ public class SuperArray
   */
   public boolean isEmpty()
   {
-    if(this.numberElements == 0) { // we have added 0 elts
-      return true;
-    } else {
-      return false; 
-    }
+    return this.numberElements == 0; // changed to this after demo/discussion
+    // if(this.numberElements == 0) { // we have added 0 elts
+    //   return true;
+    // } else {
+    //   return false; 
+    // }
   }
 
   /** Basic #3: add(int value) add the value & increment (no special cases)
