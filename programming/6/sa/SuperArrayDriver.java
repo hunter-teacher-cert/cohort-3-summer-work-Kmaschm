@@ -48,8 +48,8 @@ public class SuperArrayDriver
     sa.add(17, 100);
     System.out.println(sa);
 
+    System.out.println("\nTesting add at 25, expecting an index out of bounds error.");
     sa.add(25, 150);
-    System.out.println(sa);
 
     System.out.println("\nTesting remove at 0, 5, and 15 (end)");
     sa.remove(0);
@@ -60,7 +60,7 @@ public class SuperArrayDriver
 
     sa.remove(15);
     System.out.println(sa);
-
+System.out.println("\nTesting remove at 15 again, expecting an index out of bounds error.");
     sa.remove(15);
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 

@@ -3,7 +3,7 @@ import java.util.*;
 
 /**
  * SuperArray by Team MarvelvsDC
- * Kate Maschmeyer
+ * Kate Maschmeyer (did myself & then worked with group)
  * collaborators: Nicole Cojuangco, Saranii Muller, Ashley Ufret
  */
 
@@ -286,7 +286,7 @@ public class SuperArray
     //   grow();
     // }
 
-    if(index > numberElements || index < 0) {
+    if(index > this.numberElements || index < 0) {
       System.out.println("Index out of bounds. Lowest index available for adding to array: 0, Greatest index available for adding to array: " + numberElements);
     
     } else {
