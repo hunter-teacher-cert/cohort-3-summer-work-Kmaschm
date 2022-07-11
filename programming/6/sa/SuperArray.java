@@ -46,44 +46,45 @@ With a SuperArray, we can:
 *
 * ***Basic***
 * Add/write:
-* > #0:  SuperArray()
+* > #0:  SuperArray() ✅
 *     Basic constructor that:
       1. Creates a new array of size 10 and assign data to refer to it. 
       2. Sets the numberElements variable to 0.
-* > #1:   SuperArray(int size)
+* > #1:   SuperArray(int size) ✅
 *     Constructor that:
 *     1. Creates a new array of size and assign data to refer to it. 
       2. Sets the numberElements variable to 0.
-* > #2:   isEmpty()
+* > #2:   isEmpty() ✅
 *     return true if the SuperArray is empty, false otherwise.
-* > #3:  add(int value)
+* > #3:  add(int value) ✅
 *     adds value to the end of the SuperArray (after the last added element)
-* > #4:  toString() 
+* > #4:  toString()  ✅
 *    return a String version of SuperArray in human-readable format
 
 * ***Intermediate ***
 * Add/write:
-* > #0: grow() 
+* > #0: grow()  ✅
 *   Enlarges the SuperArray. It should:
 *      Create a new array, 5 units larger
 *      Copy the old data to the new array
 *      Set the data instance variable to point to the new array
 *
 * Modify:
-* > #1: add(int value) 
+* > #1: add(int value)  ✅
 *   Modify code so that if the data array is filled it will:
 *     1. Grow the array using the grow method you just wrote.
 *     2. Add the new value to the array.
 * 
 * Add/write:
-* > #2: get(index) - return the value at location index 
+* > #2: get(int index)  ✅
+*    return the value at location index 
 *
 *
 * ***Advanced***
 * Write:
-* > #0: add(index,value) 
+* > #0: add(int index, int value)  ✅
 *     Adds value at location index. You should shift the data to create an open space if you need to and you can use grow() if you need to make the array larger.
-* > #1: remove(index) 
+* > #1: remove(int index) ✅
     Removes the location at index by shifting all the elements after location index and subtracting one from numberElements
 *
 */

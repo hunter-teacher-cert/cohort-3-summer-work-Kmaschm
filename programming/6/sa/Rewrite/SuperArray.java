@@ -77,14 +77,15 @@ With a SuperArray, we can:
 *     2. Add the new value to the array.
 * 
 * Add/write:
-* > #2: get(index) - return the value at location index 
+* > #2: get(int index)
+*     return the value at location index 
 *
 *
 * ***Advanced***
 * Write:
-* > #0: add(index,value) 
+* > #0: add(int index, int value) 
 *     Adds value at location index. You should shift the data to create an open space if you need to and you can use grow() if you need to make the array larger.
-* > #1: remove(index) 
+* > #1: remove(int index) 
     Removes the location at index by shifting all the elements after location index and subtracting one from numberElements
 *
 */
