@@ -78,6 +78,8 @@ With a SuperArray, we can:
 * Add/write:
 * > #2: get(int index)  ✅
 *    return the value at location index 
+* > #3: set(int index, int value)  
+*    set the element at index to value  
 *
 *
 * ***Advanced***
@@ -92,7 +94,7 @@ With a SuperArray, we can:
 
 public class SuperArray
 {
- 
+
  //instance variables
   private int[] data;           // "interior"/"underlying" data container
   private int numberElements;   // number of "meaningful" elements
@@ -170,7 +172,8 @@ public class SuperArray
      //System.out.println("Added " + value + " at location " + numberElements);
 
     // NOTE: if numberElements fill in an array, then the last element is at (numberElements - 1).  We add the next value at the numberElements index.
-    this.data[this.numberElements] = value; // add value to end 
+    this.set(this.numberElements, value);
+    //this.data[this.numberElements] = value; // add value to end 
     this.numberElements++; // make sure we update our count
 
   }//end add()
@@ -222,7 +225,8 @@ public class SuperArray
 
     // copy elements from old array into new one
     for(int i = 0; i < this.numberElements; i++) {
-      grownArr[i] = this.data[i];
+      //grownArr[i] = this.data[i];
+      grownArr[i] = this.get(i);
     }
 
     this.data = grownArr;
@@ -249,6 +253,15 @@ public class SuperArray
     return this.data[index];
   }
 
+  /* Intermediate #3: set(int index, int value)  
+  *    set the element at index to value  
+  *
+  */
+  public void set(int index, int value) {
+    this.data[index] = value;
+  }
+
+  
   // ************ END INTERMEDIATE ************
 
 
@@ -284,12 +297,14 @@ public class SuperArray
        // shift elements toward the end of the array
       for(int i = this.numberElements - 1; i >= index; i--) { // start at last element, move inward
         //System.out.println("Setting location " + (i+1) + " to " + this.get(i));
-        this.data[i+1] = this.get(i);
+        //this.data[i+1] = this.get(i);
+        this.set(i+1, this.get(i));
       }
 
       // insert new element
       // System.out.println("Inserting " + value + " at location " + index);
-      this.data[index] = value;
+      this.set(index, value);
+      //this.data[index] = value;
 
       // increment numberElements
       this.numberElements++;
@@ -312,7 +327,8 @@ public class SuperArray
     if(index < numberElements) { // valid index
       // shift items down to remove the item at index
       for(int i = index; i < numberElements-1; i++) {
-        this.data[i] = this.get(i+1);
+        //this.data[i] = this.get(i+1);
+        this.set(i, this.get(i+1));
       }
       // subtract fom numberElements;
       this.numberElements--;
