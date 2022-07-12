@@ -35,6 +35,17 @@ public class AlPractice{
   */
   public static ArrayList<Integer> buildRandomList(int size, int maxval){
 
+    // dealing with preconditions
+    if(size < 0) {
+      System.out.println("Parameter 'size' is invalid; size must be >= 0.  Returning null");
+      return null;
+    }
+
+    if(maxVal <= 0) {
+       System.out.println("Parameter 'maxval' is invalid; maxval must be > 0.  Returning null");
+       return null;
+    }
+
     // declare & instantiate ArrayList
     ArrayList<Integer> a = new ArrayList<Integer>();
 
