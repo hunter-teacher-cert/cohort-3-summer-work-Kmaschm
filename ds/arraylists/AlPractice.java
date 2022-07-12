@@ -101,10 +101,7 @@ public class AlPractice{
       dataList.set(index2, temp);
       } else {
         System.out.println("At least one of the indices is invalid.  Please try again.");
-      }
-    
-
-    
+      }  
   }
 
   /**
@@ -148,11 +145,16 @@ public class AlPractice{
   */
   public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
     ArrayList<Integer> summedList = new ArrayList<Integer>();
+    if(ListA.size() != ListB.size()) {
+      System.out.println("Lists are of unequal size"); 
+      // 
+    }
+    
     for(int i = 0; i < ListA.size(); i++) {
       summedList.add(ListA.get(i) + ListB.get(i));
     }
     
-    return summedList;//placeholder to compile.
+    return summedList;
   }
 
   /** zipLists
