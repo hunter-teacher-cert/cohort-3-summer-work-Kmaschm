@@ -88,14 +88,22 @@ public class AlPractice{
   - No other values should be modified.
   */
   public static void swapElements(ArrayList<Integer> dataList, int index1,int index2){
-    // save element at index1 to temp
-    int temp = dataList.get(index1);
+   
+    if(index1 > 0 && index1 < dataList.size() 
+      && index2 > 0 && index2 < dataList.size()) { // valid indices
+      // save element at index1 to temp
+      int temp = dataList.get(index1);
   
-    // put the element at index2 into the location at index1
-    dataList.set(index1, dataList.get(index2));
+      // put the element at index2 into the location at index1
+      dataList.set(index1, dataList.get(index2));
  
-    // put temp into the location at index2
-    dataList.set(index2, temp);
+      // put temp into the location at index2
+      dataList.set(index2, temp);
+      } else {
+        System.out.println("At least one of the indices is invalid.  Please try again.");
+      }
+    
+
     
   }
 
