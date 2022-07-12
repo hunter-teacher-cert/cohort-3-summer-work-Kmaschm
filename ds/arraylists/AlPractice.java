@@ -1,6 +1,14 @@
 import java.io.*;
 import java.util.*;
 
+/**
+ * Self-version
+ * Room 14 (7/12/22)
+ * Collaborators: Shana Elizabeth Henry, Christopher de Silva, Kate Maschmeyer, Ashley Ufret
+ */
+
+
+
 /** Methods to write
 
 Basic level:
