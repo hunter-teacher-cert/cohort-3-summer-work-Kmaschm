@@ -146,8 +146,10 @@ public class AlPractice{
   public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
     ArrayList<Integer> summedList = new ArrayList<Integer>();
     if(ListA.size() != ListB.size()) {
-      System.out.println("Lists are of unequal size"); 
-      // 
+      System.out.println("Lists are of unequal size. Returning null"); 
+      // TODO: summedList will eventually be Math.max(ListA.size(), ListB.size()); 
+      // longer list will "add 0" and put in summedList
+      return null;
     }
     
     for(int i = 0; i < ListA.size(); i++) {
