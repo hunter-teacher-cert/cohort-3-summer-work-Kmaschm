@@ -192,6 +192,10 @@ public class AlPractice{
     al = buildRandomList(10,100);
     System.out.println(al);
 
+    // Testing sumOfList
+    System.out.println("The sum of list al: " +sumOfList(al));
+
+
     //Uncomment these to test swapElements
     swapElements(al,2,6); // NOTE: had to include al
     System.out.println(al);
