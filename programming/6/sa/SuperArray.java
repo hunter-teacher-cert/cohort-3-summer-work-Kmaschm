@@ -191,7 +191,7 @@ public class SuperArray
   public String toString()
   {
     String sArr = ""; // initialize to empty String so that concatenated integers will be casted to Strings
-    sArr = sArr + "{"; // starting to print as array
+    sArr = sArr + "["; // starting to print as array
     for(int i = 0; i < this.numberElements; i++) {
       if(i == 0) { // starting element
         sArr = sArr + this.get(i);
@@ -199,7 +199,7 @@ public class SuperArray
          sArr = sArr + ", " + this.get(i);
       }
     }
-    sArr = sArr + "}"; // end nicely-formatted array
+    sArr = sArr + "]"; // end nicely-formatted array
     
     return sArr;
   }//end toString()

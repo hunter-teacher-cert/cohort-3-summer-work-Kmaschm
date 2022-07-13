@@ -23,7 +23,7 @@ public static void removeValue(ArrayList<Integer> dataList, int valueToRemove) â
 
 Advanced level:
 -------------------
-public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB) âœ…
+public static ArrayList<Integer> sumLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB)  - TODO: deal with arrays that are different sizes (see method for more comments)
 public static ArrayList<Integer> zipLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB)
 */
 
@@ -120,7 +120,7 @@ public class AlPractice{
   - The dataList is modified such that all occurances of valueToRemove are removed.
   */
   public static void removeValue(ArrayList<Integer> dataList, int valueToRemove){
-    // set up a counter through the ArrayLists  
+    // set up a counter for going through dataList 
     int i = 0;
 
     // stop when we're at the end of the list
@@ -178,6 +178,8 @@ public class AlPractice{
   - The parameter ArrayLists should not be modified.
   */
   public static ArrayList<Integer> zipLists(ArrayList<Integer>ListA,ArrayList<Integer>ListB){
+    ArrayList<Integer> zippedList = new ArrayList<Integer>();
+    
     return null;//placeholder to compile.
   }
 
