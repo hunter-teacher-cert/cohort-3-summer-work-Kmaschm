@@ -40,8 +40,13 @@ public class LinkedList{
   Adds a new node containing value to the front of the list.
   */
   public void add(String value){
-    Node n = new Node(value);
-    n.setNext(this.head);
+    // Node n = new Node(value);
+    // n.setNext(this.head);
+
+    // after demo, thanks Jessica Novillo!
+    Node n = new Node(value, head);
+    // equivalent to above (create new node with data == value, and next == head)
+    
     head = n;
   }
 
@@ -72,7 +77,7 @@ public class LinkedList{
       s = s + walker;
       walker = walker.getNext();
     }
-    
+    s = s + "null";
     return s;
   }
 
