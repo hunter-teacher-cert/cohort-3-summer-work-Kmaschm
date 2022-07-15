@@ -57,7 +57,7 @@ public class Driver{
 	// 2. moves walker to point to the next node
 	// 3. loops until walker gets to null
 
-      // group version
+    // group version
     // while(walker.getNext() != null) {
     //   System.out.println(walker.getData());
     //   walker = walker.getNext();
