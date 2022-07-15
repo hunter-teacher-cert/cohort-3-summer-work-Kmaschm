@@ -26,7 +26,7 @@ public class PairedP
     // vertical bar graph version
  public static void vBarGraphify( int [] nums)
     { 
-      int max =nums[0];
+      int max = nums[0];
       
       for( int i = 0; i < nums.length; i++)
         {
