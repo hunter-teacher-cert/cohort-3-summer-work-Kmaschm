@@ -19,7 +19,7 @@ Think/Write Pair Share:  Write a condtional statement that uses and if, else if,
 ## Mini Lesson
 
 ### Materials
-[Jamboard - Conditionals Review](https://jamboard.google.com/d/1l5ZGgCqb6YQk090w11ONsnG6bq1HVkOf7V94cYxKMjQ/viewer?f=9)  - Jamboard needed for interactive functionality.  A pdf copy for viewing is available in this repo: [/methods/ConditionalsReview.pdf](https://replit.com/@Kmaschm/cohort-3-summer-work-Kmaschm#methods/ConditionalsReview.pdf)
+[Jamboard - Conditionals Review](https://jamboard.google.com/d/1l5ZGgCqb6YQk090w11ONsnG6bq1HVkOf7V94cYxKMjQ/viewer?f=9)  - Jamboard needed for interactive functionality.  A pdf copy for viewing is available in this repo: [/methods/ConditionalsReview.pdf](https://replit.com/@Kmaschm/cohort-3-summer-work-Kmaschm#methods/ConditionalsReview.pdf) NOTE: Kate wrote Jamboard resource for CS4All NYC Creative Web: Jamboard resource used for CS4ALL NYC to teach teachers -  reinforces P5 conditional syntax
 
 ### Intro: 
 Reminder of syntax from Do Now & state focus of lesson: practicing syntax for conditional statements.  
