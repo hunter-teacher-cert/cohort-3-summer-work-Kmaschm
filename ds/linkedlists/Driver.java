@@ -52,6 +52,18 @@ public class Driver{
     for(int i = 0; i < a.length; i++) {
       System.out.println("a[" + i +"]: " +a[i]);
     }
+
+    System.out.println("Remove " + l2.get(2) + " from list");
+    l2.remove(2); 
+    System.out.println(l2);
+
+    System.out.println("Remove " + l2.get(0) + " from list");
+    l2.remove(0); 
+    System.out.println(l2);
+
+    System.out.println("Attempting to remove invalid index from list l2");
+    l2.remove(9); 
+    System.out.println("Linked list l2: " + l2);
     
     
   }

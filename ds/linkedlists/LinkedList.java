@@ -27,7 +27,7 @@ toArray() ✅
 
 Challenge
 --------
-remove(int index);
+remove(int index); ✅
 */
 
 public class LinkedList{
@@ -206,6 +206,22 @@ public class LinkedList{
   remove(2) results in:
   "a"->"b"->"d"->"e"
   */
-  public void remove(int index){
+   public void remove(int index){
+    if(index == 0 ) {    
+      head = head.getNext(); // head will point to next one
+    } else if(index < 0 || index > this.size()) {
+      System.out.println("Invalid index.  Nothing to remove");
+    } else {
+       int count = 0;
+        Node walker = head;
+    
+        while (walker != null && count <= (index-1)){
+          if(count == (index-1) ) {
+            walker.setNext(walker.getNext().getNext()); 
+          } 
+          walker = walker.getNext();
+          count++; 
+        }
+    }
   }
 }
