@@ -10,13 +10,49 @@ public class Driver{
     l.add("one");
     l.add("two");
     
-    System.out.println("Linked list l: " + l); // Linked list l: two->one->
+    System.out.println("Linked list l: " + l); // Linked list l: two->one->null
   
     System.out.println("Item at index 0: " + l.get(0)); // two
     System.out.println("Item at index 1: " + l.get(1)); // one
     System.out.println("Item at index 2: " + l.get(2)); // Invalid index
 
     System.out.println("Size of l: " + l.size());  // 2
+
+
+    LinkedList l2 = new LinkedList();
+    l2.add("d");
+    l2.add("c");
+    l2.add("b");
+    l2.add("a");
+    System.out.println("Linked list l2: " + l2);
+
+    l2.add(1, "z");
+    System.out.println("Linked list l2 after adding 'z' at 1: " + l2);
+
+    l2.add(5, "q");
+    System.out.println("Linked list l2 after adding 'q' at 5: " + l2);
+    l2.add(0, "f");
+    System.out.println("Linked list l2 after adding 'f' at 0: " + l2);
+
+    System.out.println("Size of l2: " + l2.size()); 
+    
+    l2.add(7, "g");
+    System.out.println("Linked list l2 after adding 'g' at 7: " + l2);
+
+    l2.add(9, "!"); // should fail 
+   
+
+    System.out.println("Index of 'a' in l2: " + l2.indexOf("a"));
+
+    System.out.println("Index of 'f' in l2: " + l2.indexOf("f"));
+
+    System.out.println("Index of 'x' in l2: " + l2.indexOf("x"));
+
+    String[] a = l2.toArray();
+    for(int i = 0; i < a.length; i++) {
+      System.out.println("a[" + i +"]: " +a[i]);
+    }
+    
     
   }
 }

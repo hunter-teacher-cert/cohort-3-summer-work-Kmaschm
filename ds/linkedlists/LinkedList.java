@@ -1,6 +1,11 @@
 import java.io.*;
 import java.util.*;
 
+/* Collaborators:
+* kate Maschmeyer, Christoper de Silva, Shana Elizabeth Henry, Ashley Ufret
+*
+*/
+
 /**
 For all attempted methods, make sensible decisions for error and
 edge cases (such as indexing out of bounds).
@@ -15,9 +20,9 @@ toString() ✅
 Intermediate (at least add, size + one of the other two)
 ------------
 size() ✅
-add(int index,String value)
-indexOf(String value);
-toArray()
+add(int index,String value) ✅
+indexOf(String value); ✅
+toArray() ✅
 
 
 Challenge
@@ -57,6 +62,11 @@ public class LinkedList{
     int count = 0;
     Node walker = this.head;
     String s = "Invalid index";
+
+    if(index < 0 ) { // badness
+      return s;
+    }
+    
     while(count <= index && walker != null) {
       if(count == index) {
         s = walker.getData();
@@ -112,7 +122,28 @@ public class LinkedList{
 
   */
   public void add(int index, String value){
+    if(index > this.size() || index < 0) { // 
+      System.out.println(index + " is an invalid index. " + value  + " node not added"); 
+    } else if(index == 0) { // if adding to the front
+      this.add(value);
+    } else {
+      int count = 0;
+      Node walker = this.head; 
+      Node n = new Node(value);
 
+      // we want the node *before* the one at index
+      while(count <= (index-1) && walker != null) {
+        if(count == (index - 1)) {
+          n.setNext(walker.getNext());
+          walker.setNext(n);
+        } 
+        walker = walker.getNext();
+        count++;
+      }
+    }
+    
+    
+        
   }
 
 
@@ -127,8 +158,20 @@ public class LinkedList{
 
   */
   public int indexOf(String value){
-    return 0;
+    Node walker = head;
+    int count = 0;
+    while (walker != null) {
+      if(walker.getData() == value) {
+        return count;
+      }
+      count++;
+      walker = walker.getNext();
+    }
+
+    System.out.println(value + " not found.  Returning -1");
+    return -1;  // if not found, return -1 
   }
+
 
 
   /**
@@ -140,7 +183,14 @@ public class LinkedList{
 
   */
   public String[] toArray(){
-    return null;
+    String[] a = new String[this.size()];
+    Node walker = head;
+
+    for(int i = 0; i < a.length; i++) {
+      a[i] = walker.getData();
+      walker = walker.getNext();
+    }
+    return a;
   }
 
 
