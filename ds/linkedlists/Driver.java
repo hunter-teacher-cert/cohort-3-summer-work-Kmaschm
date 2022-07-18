@@ -64,7 +64,11 @@ public class Driver{
     System.out.println("Attempting to remove invalid index from list l2");
     l2.remove(9); 
     System.out.println("Linked list l2: " + l2);
-    
+
+     System.out.println("Remove " + l2.get(5) + " from list");
+    l2.remove(5); 
+    System.out.println(l2);
+
     
   }
 }
