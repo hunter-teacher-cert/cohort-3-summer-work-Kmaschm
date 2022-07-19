@@ -81,11 +81,11 @@ public class SortSearch{
         return -1;
       } else {
         int smallIndex = start;
-        int smallValue = this.data.get(start);
+        int smallValue = this.get(start);
         for(int i = smallIndex; i < this.data.size(); i++) {
-          if(this.data.get(i) < smallValue) {
+          if(this.get(i) < smallValue) {
             smallIndex = i;
-            smallValue = this.data.get(i);
+            smallValue = this.get(i);
           }
         }
     	  return smallIndex; // returns index of 1st time smallest is seen
@@ -115,7 +115,7 @@ public class SortSearch{
         minIndex = this.findSmallestIndex(i); // found smallest 
 
         // swap
-        temp = this.data.get(i);
+        temp = this.get(i);
         this.data.set(i, this.get(minIndex));
         this.data.set(minIndex, temp);
 
