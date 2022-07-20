@@ -77,7 +77,7 @@ public class SortSearch{
   
     public int findSmallestIndex(int start){
       if(start < 0 || start >= this.data.size()) {
-        System.out.println("Index " + start + " is invalid");
+        System.out.println("Index " + start + " is invalid.  Returning -1.");
         return -1;
       } else {
         int smallIndex = start;
@@ -143,9 +143,14 @@ public class SortSearch{
 
     */
     public int linearSearch(int value){
-	
-	
-	return 0; // replace this return
+	    int index = -1;
+      for(int i = 0; i < this.data.size(); i++) {
+        if(this.get(i) == value) {
+          index = i;
+          return index;
+        }
+      }
+	    return index; 
     }
     
     /**
@@ -154,13 +159,35 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
     public int binarySearch(int value){
+    // check that data is sorted.  If not, sort it first
 
-	// create assign variables  representing the high, low and middle indices 
+      
+	// create assign variables  representing the high, low and middle indices
+      int low = 0;
+      int mid = this.data.size()/2;
+      int high = this.data.size()-1; 
+      
 	// while we're not done:
 	//   if the item is at data.get(middle), return middle
 	//   otherwise, update high, low, and middle
+      while(high > low) {
+        if(this.get(mid) == value) {
+          return mid;
+        } 
+        if(this.get(mid) > value) {
+          
+        }
 
-	return 0;
+        if(this.get(mid) < value) {
+          
+        }
+        
+        
+      }
+
+
+      
+	return -1;
 	    
     }
     

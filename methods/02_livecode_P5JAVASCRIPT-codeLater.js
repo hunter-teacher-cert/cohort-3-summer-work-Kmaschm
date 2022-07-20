@@ -1,4 +1,4 @@
-
+// CODE EXAMPLE, see .md file
 
 // Variables go up here
 var rectW = 200;
