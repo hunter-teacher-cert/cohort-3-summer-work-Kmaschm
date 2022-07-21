@@ -201,22 +201,19 @@ public class SortSearch{
     
       int midIndex = (lowIndex + highIndex) / 2;
   
-      if (!(highIndex > lowIndex)) { // end here
+      if (lowIndex >=  highIndex) { // end here
         System.out.println("Value, " + value + ", not found.");
         return NOT_FOUND;
-      }
-      
-      // target found
-      if ( this.get(midIndex) == value) {
-         // System.out.println("Value, " + value + ", found at location " + midIndex);
+      } else if( this.get(midIndex) == value) { // target found
         return midIndex;
-      }
-      // value at mid index higher than target
-      if (value < this.get(midIndex)) { // we need to look at the lower half, so set highIndex to 1 below current middle
-        highIndex = midIndex-1;
-      }
-      // value at mid index lower than target
-      if (value < this.get(midIndex) ) { // we need to look at the upper half, so set lowIndex to 1 above middle location
+      } else if (value < this.get(midIndex)) { 
+        // value at mid index higher than target
+        // we need to look at the lower half, so set highIndex to 1 below current middle
+        highIndex = midIndex;
+      } else { 
+      //if (value > this.get(midIndex) ) { 
+          // value at mid index lower than target
+        // we need to look at the upper half, so set lowIndex to 1 above middle location
         lowIndex = midIndex + 1;
         
       }
