@@ -159,36 +159,36 @@ public class SortSearch{
        This algorithm only works on sorted ArrayLists.
     */
     public int binarySearch(int value){
-    // check that data is sorted.  If not, sort it first
-
-      
-	// create assign variables  representing the high, low and middle indices
+      // check that data is sorted.  If not, sort it first
+      this.builtinSort();
+        
+  	  // create assign variables  representing the high, low and middle indices
       int low = 0;
-      int mid = this.data.size()/2;
       int high = this.data.size()-1; 
+      int mid = (low + high)/2;
+      
       
 	// while we're not done:
 	//   if the item is at data.get(middle), return middle
 	//   otherwise, update high, low, and middle
-      while(high > low) {
-        if(this.get(mid) == value) {
+      while(high > low) { 
+
+        if(value == this.get(mid)) {
           return mid;
+        }  else if(value > this.get(mid)) { // check top half
+          low = mid + 1;
+          mid = (low + high) / 2;
+          // high remains the same
+        } else { // value < this.get(mid) <-- check bottom half
+          // low remains the same 
+          high = mid;
+          mid = (low + high) / 2;
+          
         } 
-        if(this.get(mid) > value) {
-          
-        }
-
-        if(this.get(mid) < value) {
-          
-        }
-        
-        
-      }
-
-
       
-	return -1;
-	    
+      }
+      System.out.println("Value, " + value + ", not found.");
+	    return -1;  // if not foubd
     }
     
     /**
@@ -198,11 +198,32 @@ public class SortSearch{
     */
 
     public int binarySearchRecursive(int value, int lowIndex, int highIndex){
+      final int NOT_FOUND = -1; 
+    
+      int midIndex = (lowIndex + highIndex) / 2;
+  
+      if (highIndex < lowIndex) { // end here
+        System.out.println("Value, " + value + ", not found.");
+        return NOT_FOUND;
+      }
+      
+      // target found
+      if ( this.get(midIndex) == value) {
+         // System.out.println("Value, " + value + ", found at location " + midIndex);
+        return midIndex;
+      }
+      // value at mid index higher than target
+      else if (value < this.get(midIndex)) { // we need to look at the lower half, so set highIndex to 1 below current middle
+        highIndex = midIndex;
+      }
+      // value at mid index lower than target
+      else if (value < this.get(midIndex) ) { // we need to look at the upper half, so set lowIndex to 1 above middle location
+        lowIndex = midIndex + 1;
+        
+      }
 
-	// refer to class discussion
-	
-	return 0;
-	    
+      return binarySearchRecursive(value, lowIndex, highIndex);
+    
     }
     
 	
@@ -212,7 +233,7 @@ public class SortSearch{
 
 
     public void builtinSort(){
-	Collections.sort(data);
+	    Collections.sort(data);
 	
     }
     

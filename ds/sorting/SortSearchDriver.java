@@ -28,6 +28,11 @@ public class SortSearchDriver {
 	System.out.println(ss);
 	ss.sort();
 	System.out.println(ss);
+
+  System.out.println("Linear search:" + ss.linearSearch(4));
+  System.out.println("Binary search:" + ss.binarySearch(4));
+  System.out.println("Recursive binary search:" + ss.binarySearch(4));
+      
 	
 
 
