@@ -160,13 +160,12 @@ public class SortSearch{
     */
     public int binarySearch(int value){
       // check that data is sorted.  If not, sort it first
-      this.builtinSort();
+      //this.builtinSort();
         
   	  // create assign variables  representing the high, low and middle indices
       int low = 0;
       int high = this.data.size()-1; 
       int mid = (low + high)/2;
-      
       
 	// while we're not done:
 	//   if the item is at data.get(middle), return middle
@@ -202,7 +201,7 @@ public class SortSearch{
     
       int midIndex = (lowIndex + highIndex) / 2;
   
-      if (highIndex < lowIndex) { // end here
+      if (!(highIndex > lowIndex)) { // end here
         System.out.println("Value, " + value + ", not found.");
         return NOT_FOUND;
       }
@@ -213,11 +212,11 @@ public class SortSearch{
         return midIndex;
       }
       // value at mid index higher than target
-      else if (value < this.get(midIndex)) { // we need to look at the lower half, so set highIndex to 1 below current middle
-        highIndex = midIndex;
+      if (value < this.get(midIndex)) { // we need to look at the lower half, so set highIndex to 1 below current middle
+        highIndex = midIndex-1;
       }
       // value at mid index lower than target
-      else if (value < this.get(midIndex) ) { // we need to look at the upper half, so set lowIndex to 1 above middle location
+      if (value < this.get(midIndex) ) { // we need to look at the upper half, so set lowIndex to 1 above middle location
         lowIndex = midIndex + 1;
         
       }
