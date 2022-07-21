@@ -39,7 +39,7 @@ public class SortSearch{
     	data = new ArrayList<Integer>();
     	r = new Random();
     	for (int i=0;i<15;i++){
-  	    data.add(r.nextInt(20));
+  	    data.add(r.nextInt(1000));
 	    }
 	
     }
@@ -48,7 +48,7 @@ public class SortSearch{
     	data = new ArrayList<Integer>();
     	r = new Random();
     	for (int i=0;i<size;i++){
-  	    data.add(r.nextInt(20));
+  	    data.add(r.nextInt(1000));
 	    }	
     }
 
@@ -170,11 +170,11 @@ public class SortSearch{
 	// while we're not done:
 	//   if the item is at data.get(middle), return middle
 	//   otherwise, update high, low, and middle
-      while(high > low) { 
+      while(high >= low) { 
 
         if(value == this.get(mid)) {
           return mid;
-        }  else if(value > this.get(mid)) { // check top half
+        } else if(value > this.get(mid)) { // check top half
           low = mid + 1;
           mid = (low + high) / 2;
           // high remains the same
@@ -187,7 +187,7 @@ public class SortSearch{
       
       }
       System.out.println("Value, " + value + ", not found.");
-	    return -1;  // if not foubd
+	    return -1;  // if not found
     }
     
     /**
