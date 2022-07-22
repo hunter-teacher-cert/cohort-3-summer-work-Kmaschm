@@ -3,6 +3,8 @@ Partner: Sam Lojacono
 
 ## Instructions for activity
 
+You will be drawing a colorful design made of rectangles or squares, circles or ovals, and lines, then coding your design.
+
 Draw your design plan on your coordinate grid paper or on coordinate grid slides (see Google classroom)! [Coordinate grid paper & digital copy provided to all.]
 
 At least:
