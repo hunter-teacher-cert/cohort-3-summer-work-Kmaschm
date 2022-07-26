@@ -1,0 +1,32 @@
+Kate Maschmeyer
+Methods Summer 2022
+GALLERY TOUR LOG
+
+
+USAGE OF TOP SECTION: 
+* Fill in discoveries etc section as you go, or after your is complete.
+* Replicate the 
+* Delete these instructions once read.
+====================================================
+DISCOVERIES:
+* Nice use of screenshots of results in https://yenminyoung.github.io/nycscertweb/
+* Nice use of gif in https://amanewei.github.io/nycscertweb/
+* Nice use of images & table in https://drydenart.github.io/nycscertweb/
+* Nice use of HTML in https://mathiskey.github.io/nycscertweb/
+
+LINGERING QUESTIONS:
+* None at the moment
+
+COMMENTS/CONCERNS/OTHER:
+* None at the moment
+====================================================
+
+
+USAGE OF BOTTOM SECTION: 
+* For any site you deem notable, add an entry using the format below
+====================================================
+Markdown Cheatsheet
+https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+notable aspect: Very useful reference for markdown
+
+-------------------------------------
