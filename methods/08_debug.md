@@ -9,10 +9,15 @@
 ## General Usage
 Code compiles and runs, but does not do what we want! 
 
-## Array Practice - Looking at for loops
-Before printing the entire array on one line: we can look at each index and its corresponding element to confirm we are incrementing correctly. We can repeat that for the reversed array to confirm the decrement
+## Array Practice - Looking at for loops 
+Before printing the entire array on one line: we can look at each index and its corresponding element to confirm we are incrementing correctly. We can repeat that for the reversed array to confirm the decrement. Will introduce an error in the lop parameters and students to debug using the println statemnet after each loop.
 
-
+## Your task
+* Compile the code below, then make a table to trace i and data[i] after each loop.
+* What line of code would make each value printed on a diffrent line?
+* What line of code would make the array printed on one line?
+* Predict what will happen if you replace the 0 on line 36? compile and run to 
+ confirm your prediction. Explain what did you find out.
 
 ```java
 public class ArrayPractice{
@@ -38,8 +43,3 @@ public class ArrayPractice{
   }
 }
 ```
-
-
-
-
-
