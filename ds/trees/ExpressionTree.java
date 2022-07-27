@@ -1,6 +1,4 @@
 public class ExpressionTree{
-
-
     //You must write this method:
     //Calculate the value of the entire tree
     public double evaluate(){
@@ -30,11 +28,10 @@ public class ExpressionTree{
       } else {
         s += "(" + left.toString() + " " + this.operator + " " + right.toString() + ")";
       }
-      
       return s;
     }
 
-
+    // return a prefix notation String representation of the tree
     public String toStringPrefix() {
       String s = "";
       if(this.isValue()) {
