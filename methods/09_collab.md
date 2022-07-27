@@ -1,4 +1,4 @@
-# Assignment: Write instructions for Kate the Robot
+# Assignment: Write instructions for [Teacher Name] the Robot
 
 ## Overview
 Students draw a design of their choosing using a set of specified shapes, then write instructions on how to recreate their image.  Instructions are then explicitly followed, illustrating need for explicit instruction.
@@ -14,7 +14,7 @@ Additionally, shapes used are ones covered early in p5.  This will also help stu
 
 
 ## Instructions
-Kate the Robot knows how to draw the following shapes:
+ [Teacher Name] the Robot knows how to draw the following shapes:
 * circle
 * oval
 * square
@@ -35,9 +35,9 @@ After time limit is up, students may choose to present their foods to the class.
 #### Instructions for group activity
 With your table group:
 
-1. Using ONLY the shapes Kate the Robot knows, draw a SECRET object. It cannot be a food item and MUST be school-appropriate.  Don’t let Kate see it!
+1. Using ONLY the shapes  [Teacher Name] the Robot knows, draw a SECRET object. It cannot be a food item and MUST be school-appropriate.  Don’t let  [Teacher Name] see it!
 2. On chart paper, write instructions of how to draw your SECRET  picture.
-3. When you are all done, Kate will try to draw your SECRET drawing only from your instructions.  
+3. When you are all done,  [Teacher Name] will try to draw your SECRET drawing only from your instructions.  
 
 [Have student read instructions out loud.  Ask what they will need to do first, then next, then after that, making sure all instructions are clear.]
 
@@ -49,7 +49,7 @@ With your table group:
 [During each section, teacher circulates without looking at student papers.  Keeping an eye on group work, teacher may suggest roles for students if needed: getting materials, writing names, alternating writing instructions, talking through instructions, noting what order things need to be drawn in, etc]
 
 #### Presentation of instructions
-Each group presents instructions (holding paper, reading instructions) while Kate the Robot follows instructions.
+Each group presents instructions (holding paper, reading instructions) while  [Teacher Name] the Robot follows instructions.  Use of robot voice & movements strongly encouraged!
 
 #### Debrief
 * How did this go?  (Students share original drawing. 
