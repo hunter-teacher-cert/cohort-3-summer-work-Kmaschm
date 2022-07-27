@@ -4,35 +4,19 @@ public class ExpressionTree{
     //You must write this method:
     //Calculate the value of the entire tree
     public double evaluate(){
-      double result = 0;
+      double result = 0; // instantiating just for set up
       
       if(this.isValue()) {
         result = this.value;
       } else {
-        if(this.operator == '+') {
-          result = (left.evaluate() + right.evaluate());
-        } 
-
-        if(this.operator == '-') {
-          result = (left.evaluate() - right.evaluate());
-        }
-
-        if(this.operator == '*') {
-          result = (left.evaluate() * right.evaluate());
-        }
-
-        if(this.operator == '/') {
-          result = (left.evaluate() / right.evaluate());
-        }
-        
+        result = this.apply(left.evaluate(), right.evaluate(), this.operator); 
       }
-      
       return result;
     }
 
     //You must write this method:
     //Return a string representation of the tree
-    //A value is just hte string of the value
+    //A value is just the string of the value
     //An operation has parenthesis around
     //such as
     //"12.5"  //just a value
@@ -51,6 +35,15 @@ public class ExpressionTree{
     }
 
 
+    public String toStringPrefix() {
+      String s = "";
+      if(this.isValue()) {
+        s += this.value;
+      } else {
+        s += "(" + this.operator + " "  + left.toStringPrefix() + " "  + right.toStringPrefix() + ")";
+      }
+      return s;    
+  }
 
 
   private double value;
@@ -72,7 +65,7 @@ public class ExpressionTree{
   }
 
   //Return true when the node is a value, false when it is an operator
-  //when the children are null, the current tree is an operator
+  //when the children are null, the current tree is a value
   private boolean isValue(){
     return left==null && right ==null;
   }
