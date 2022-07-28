@@ -40,9 +40,9 @@ public class ExpressionTree{
   private double apply(double a, double b, char op){
    if(op == '+'){
     return a+b;
-   }else if(op == '-'){
+   } else if(op == '-'){
     return a-b;
-   }else if(op == '*'){
+   } else if(op == '*'){
     return a*b;
    } else if(op =='^') {
      return Math.pow(a,b);
