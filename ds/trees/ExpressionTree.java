@@ -1,68 +1,30 @@
 public class ExpressionTree{
-    //You must write this method:
-    //Calculate the value of the entire tree
-    public double evaluate(){
-      double result = 0; // instantiating just for set up
-      
-      if(this.isValue()) {
-        result = this.value;
-      } else {
-        result = this.apply(left.evaluate(), right.evaluate(), this.operator); 
-      }
-      return result;
-    }
 
-    //You must write this method:
-    //Return a string representation of the tree
-    //A value is just the string of the value
-    //An operation has parenthesis around
-    //such as
-    //"12.5"  //just a value
-    //"(5.0-8.0)" //a tree with 2 value children
-    //"(12.5*(5.0-8.0)) //a tree that is the product of the previous two example trees
-    //"(((2.0+1.0)/(8.0*0.43)) - 1.0)" //a tree with more
-    public String toString(){
-      String s = "";
-      if(this.isValue()) {
-        s += this.value;
-      } else {
-        s += "(" + left.toString() + " " + this.operator + " " + right.toString() + ")";
-      }
-      return s;
-    }
-
-    // return a prefix notation String representation of the tree
-    public String toStringPrefix() {
-      String s = "";
-      if(this.isValue()) {
-        s += this.value;
-      } else {
-        s += "(" + this.operator + " "  + left.toStringPrefix() + " "  + right.toStringPrefix() + ")";
-      }
-      return s;    
-  }
-
-
+  // INSTANCE VARIABLES
   private double value;
   private ExpressionTree left,right;
   private char operator;
 
-  //Tree can be a value
+  // YOU WILL FILL IN 2 METHODS: toString() and evaluate() -- see end of code
+
+
+  //  ************** CONSTRUCTORS ****************
+  // Constructor - tree can be just a value
   public ExpressionTree(double val){
    value = val;
    left = null;
    right = null;
   }
 
-  //Tree can be an operator that connects two sub-trees
+  // Constructor - Tree can be an operator that connects two sub-trees
   public ExpressionTree(char op, ExpressionTree l, ExpressionTree r){
     operator = op;
     left = l;
-    right = r;
+    right =r;
   }
 
-  //Return true when the node is a value, false when it is an operator
-  //when the children are null, the current tree is a value
+  //  ************* PROVIDED METHODS ****************
+  // checks if the expressionTree is a value (as opposed to an operator with subtrees)
   private boolean isValue(){
     return left==null && right ==null;
   }
@@ -84,7 +46,57 @@ public class ExpressionTree{
    }else{ //  if(op == '/'){ //or any invalid operators
     return a/b;
    }
+  }
 
+
+   //  ************* METHODS TO WRITE ****************
+    
+
+    /* Return a string representation of the tree
+    EXAMPLES:
+    "12.5"  //just a value
+    "(5.0-8.0)" //a tree with 2 value children
+    "(12.5*(5.0-8.0)) //a tree that is the product of the previous two example trees
+    "(((2.0+1.0)/(8.0*0.43)) - 1.0)" //a tree with more 
+    */
+    public String toString(){
+      // Set up empty String, as we will need to return one
+       String s = "";
+      // What is the base case?  Set it up here
+       if(this.isValue()) {
+        s += this.value;
+      } else {
+        s += "(" + left.toString() + " " + this.operator + " " + right.toString() + ")";
+      }
+      return s;
+    } 
+      
+    //Calculate the value of the entire tree
+    // Your thinking from toString() may help here
+    // This method will also be recursive
+    // Also, use provided method: apply(double a, double b, char op)
+    public double evaluate(){
+      double result = 0.0; // instantiating just for set up
+      
+      if(this.isValue()) {
+        result = this.value;
+      } else {
+        result = this.apply(left.evaluate(), right.evaluate(), this.operator); 
+      }
+      return result;
+    }
+
+    // return a prefix notation String representation of the tree
+    public String toStringPrefix() {
+      String s = "";
+      if(this.isValue()) {
+        s += this.value;
+      } else {
+        s += "(" + this.operator + " "  + left.toStringPrefix() + " "  + right.toStringPrefix() + ")";
+      }
+      return s;    
   }
 
  }
+
+
