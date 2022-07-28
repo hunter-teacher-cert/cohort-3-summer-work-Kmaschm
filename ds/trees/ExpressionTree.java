@@ -44,9 +44,14 @@ public class ExpressionTree{
     return a-b;
    }else if(op == '*'){
     return a*b;
-   }else{ //  if(op == '/'){ //or any invalid operators
+   } else if(op =='^') {
+     return Math.pow(a,b);
+   } else if(op == 'r') {
+     return Math.pow(a, 1/b);  
+   } else{ //  if(op == '/'){ //or any invalid operators
     return a/b;
    }
+
   }
 
 
