@@ -6,6 +6,7 @@ public class ExpressionTree{
   private char operator;
 
   // YOU WILL FILL IN 2 METHODS: toString() and evaluate() -- see end of code
+  // ALSO COMPLETED: toStringPrefix()
 
 
   //  ************** CONSTRUCTORS ****************
