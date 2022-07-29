@@ -7,7 +7,7 @@ Additionally, shapes used are ones covered early in p5.  This will also help stu
 
 
 ## Groupwork approaches/techniques used
-* Unplugged activity (may play 1-100 unplugged game to get students to have a low-stakes, short, but fun activity that requires collaborations!)
+* Unplugged activity (may play [1-100 unplugged game](https://www.saravanderwerf.com/100-numbers-to-get-students-talking/) to get students to have a low-stakes, short, but fun activity that requires collaborations!)
 * Classroom setup (in heterogeneous groups) -- students have someone nearby to collaborate with, thoughtful intentional, heterogeneous groupings
 * Intentional heterogeneous groupings -- having a variety of student experiences and interests will help students learn from each other during this activity
 * Individual think time, then group activity -- practice idea, view some examples, then work together as a group
