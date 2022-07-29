@@ -7,12 +7,12 @@ Roster: Kate Maschmeyer, Will LaMorie, Maxwell Yearwood
 Classroom Attributes:
 * course: CS/Coding [CS4All NYC's Creative Web] (semester long)
 * grade level: 6th grade
-* prior run count:  each semester since 2019 (in various incarnations w/ pandemic)
+* prior run count:  each Fall/Spring semester since Sept 2019 (in various incarnations w/ pandemic)
 
 School Attributes:
 * school size: 160 (450 in K-5)
 * school grade range: 6-8 (K-5 down the street) 
-* faculty count: 0.5 (I'm it)
+* faculty count: 0.5 (I'm it & also teach Algebra)
 * courses: CS/Coding
 
 * * *
@@ -79,7 +79,7 @@ This is attractive because...
 * Need to set aside time outside of class to respond to all students: can be quick, 15-30 sec responses per student
 
 #### Mechanism for Gauging Efficacy
-How are students responding each day?
+Student observation: How are students responding each day?
 Is the teacher learning names? ;)
 
 #### Expected Hurdles and Plans to Overcome
@@ -123,15 +123,20 @@ https://www.saravanderwerf.com/100-numbers-to-get-students-talking/
 #### Rollout Timeline
 Preferred to do 1-2 times at beginning of school year, but can be played whenever class needs a reset
 
+#### Expected Positive Outcomes
+* Students have a fun, low-stakes way to work together.  
+* Fun reset if students need
+* Can use throughout the year if desired
 
+#### Mechanism for Gauging Efficacy
+Student observation: how are they responding?  Are they working together?  Do students need support in working together? 
+
+#### Expected Hurdles and Plans to Overcome
+* Just need copies, clipboards, & markers!
 
 
 * * *
 
 ### Related resources
-* [a link (this is the visible text)](https://xkcd.com)
-* for when you just want to show the link (gh will still make it clickable): https://xkcd.com
-* a story
-* a book
-* name of a person who know a lot
-* etc
+* https://www.saravanderwerf.com/week-1-day-1-name-tents-with-feedback/
+* https://www.saravanderwerf.com/100-numbers-to-get-students-talking/
