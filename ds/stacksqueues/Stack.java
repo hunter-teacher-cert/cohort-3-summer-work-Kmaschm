@@ -29,8 +29,8 @@ public class Stack{
   // int pop() - remove and return the top value from the stack
   public int pop() {
     if(this.isEmpty()) {
-      System.out.println("Stack is empty, returning -1");
-      return -1;
+      System.out.println("Stack is empty, returning " + Integer.MIN_VALUE);
+      return Integer.MIN_VALUE;
     } else {
       int top = data.get(0);
       //System.out.println("Removing: " + top);
@@ -42,8 +42,8 @@ public class Stack{
   // int top() - return but do not remove the top value from the stack
   public int top() {
     if(this.isEmpty()) {
-      System.out.println("Stack is empty, returning -1");
-      return -1;
+      System.out.println("Stack is empty, returning " + Integer.MIN_VALUE);
+      return Integer.MIN_VALUE;
     } else {
       return data.get(0);
     }

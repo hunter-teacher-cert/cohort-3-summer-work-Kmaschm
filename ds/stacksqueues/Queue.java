@@ -31,8 +31,8 @@ public class Queue {
   // int dequeue() - remove and return the top value from front of the queue
   public int dequeue() {
     if(this.isEmpty()) {
-      System.out.println("Queue is empty, returning -1");
-      return -1;
+      System.out.println("Queue is empty, returning " + Integer.MIN_VALUE);
+      return Integer.MIN_VALUE;
     } else {
       int front = data.get(0);
       //System.out.println("Removing: " + top);
@@ -45,8 +45,8 @@ public class Queue {
   // int front() - return but do not remove the top value from the front of the queue
   public int front() {
     if(this.isEmpty()) {
-      System.out.println("Queue is empty, returning -1");
-      return -1;
+      System.out.println("Queue is empty, returning " + Integer.MIN_VALUE);
+      return Integer.MIN_VALUE;
     } else {
       return data.get(0);
     }
