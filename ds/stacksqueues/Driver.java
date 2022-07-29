@@ -17,6 +17,7 @@ public class Driver {
     //Random r = new Random();
       
     for(int i = 0; i < size; i++) {
+      //s.push(-1*i);
       s.push(i);
     }
     System.out.println("------------------");  
@@ -47,7 +48,9 @@ public class Driver {
     // Random r = new Random();
       
     for(int i = 0; i < size; i++) {
+      //q.enqueue(-1*i);
       q.enqueue(i);
+      
     }
     System.out.println("------------------");  
     System.out.println("Queue q: " + q.toString());
