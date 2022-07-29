@@ -91,8 +91,9 @@ Is the teacher learning names? ;)
 #### How It Works
 Have students in groups of 3 or 4 (can do 2 if needed, but not 1 or > 4).
 Have sheets printed with 1-100 placed in seemingly random order (see link)
+Students each need writing utensil, preferably light marker color that is different from their tablemates.
 
-Go over student instructions & have students confirm order amongst themselves (who is 1, 2, etc?)
+Go over student instructions & have students confirm order amongst themselves (who is 1, 2, etc?)  Set papers face down on table, giving groups of 4 the 4-person paper & the groups of 3 the 3-person paper (clip to clipboard so students can't see through paper)
 
 >**Student instructions**
 >You & your table will get a sheet that has the numbers 1-100 on it, but the numbers are not in order.
@@ -105,11 +106,24 @@ Go over student instructions & have students confirm order amongst themselves (w
 
 > You may HELP one another, but each person must mark their own numbers!
 
+Set timer for 3 minutes & have students flip paper over to start.  Circulate while students work.  Audibly praise when students are supporting each other.
 
+**Debrief:***
+* How did it go?
+* What went well?
+* What could we do better next time?
 
+Offer 1 minute to stratgize with group.  Repeat game with new paper.
+
+[Since papers do have a pattern to the numbers, you can offer a variation for play later in the year: offer Medium/Spicy: Medium - version matches number of people in group, Spicy - version does not match]
 
 #### Source: 
 https://www.saravanderwerf.com/100-numbers-to-get-students-talking/
+
+#### Rollout Timeline
+Preferred to do 1-2 times at beginning of school year, but can be played whenever class needs a reset
+
+
 
 
 * * *
